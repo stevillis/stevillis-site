@@ -20,53 +20,47 @@
 <body class="bg-shark flex flex-col h-screen justify-between">
     <!-- Navbar -->
     <header>
-        <div class="flex w-full py-4 md:px-20">
-            <div class="container flex items-center mx-4">
-                <div>
-                    <a href="{% url 'index' %}">
-                        <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
-                    </a>
-                </div>
-                <div class="flex justify-end flex-1 text-white text-3xl hover:text-rose md:hidden">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="items-end flex-1 text-white font-bold hidden md:flex">
-                    <nav class="flex-1">
-                        <ul class="flex justify-end flex-1">
-                            <li class="px-4">
-                                <a href="#" class="hover:text-rose">
-                                    Formações
-                                </a>
-                            </li>
-                            <li class="px-4">
-                                <a href="#" class="hover:text-rose">
-                                    Sobre
-                                </a>
-                            </li>
-                            <li class="px-4">
-                                <a href="#" class="hover:text-rose">
-                                    Contato
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+        <div class="flex justify-between py-5 mx-4 md:px-20">
+            <div>
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
+                </a>
+            </div>
+            <i class="fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
+            <div class="items-end flex-1 text-white font-bold hidden md:flex">
+                <nav class="flex-1">
+                    <ul class="flex justify-end flex-1">
+                        <li class="px-4">
+                            <a href="#" class="hover:text-rose">
+                                Formações
+                            </a>
+                        </li>
+                        <li class="px-4">
+                            <a href="#" class="hover:text-rose">
+                                Sobre
+                            </a>
+                        </li>
+                        <li class="px-4">
+                            <a href="#" class="hover:text-rose">
+                                Contato
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </header>
 
     <!-- Content -->
-    <main>
+    <main class="md:px-20">
         {% block conteudo %}
         {% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="bottom-0 mb-5 md:px-20">
-        <div class="flex justify-between text-white px-4">
-            <div class="md:col-span-2 mt-2">
-                <p class="flex justify-end text-gray-400 text-xs">&copy; {% now 'Y' %} Stévillis Sousa</p>
-            </div>
+    <footer class="bottom-0 mb-5 mx-4 md:px-20">
+        <div class="flex justify-between items-center text-white">
+            <p class="text-gray-400 text-xs">&copy; {% now 'Y' %} Stévillis Sousa</p>
             <ul class="flex justify-center">
                 <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
                     <a href="https://www.linkedin.com/in/stevillis/" target="_blank"><i class="fab fa-linkedin"></i></a>
