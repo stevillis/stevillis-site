@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo %}
+<h1 class="text-7xl text-white text-center pt-10 underline">Projetos</h1>
+<div class="grid grid-cols-1 my-10 text-white">
+    <div class="bg-tuna">
+        <div class="py-5 px-7 m-4">
+            <h2 class="text-center text-4xl pb-10 hover:text-rose">
+                <a href="https://obscure-badlands-07952.herokuapp.com" target="_blank">
+                    Sistema de Registro de Certificados e Diplomas
+                </a>
+            </h2>
+            <img src="{% static 'mysite/img/registro-diploma-preview.png' %}"
+                alt="Sistema de Registro de Certificados e Diplomas" class="">
+            <div class="flex justify-between pt-5">
+                <h3 class="text-center text-xl">
+                    Status: <span class="text-amber">Em desenvolvimento</span>
+                </h3>
+                <h3 class="text-center text-xl">
+                    Tecnologias: Django, HTML, CSS, JavaScript, Bootstrap, PostgreSQL
+                </h3>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock conteudo %}

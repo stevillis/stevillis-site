@@ -18,9 +18,9 @@
     <link rel="stylesheet" type="text/css" href="https://stevillis.github.io/style/storage/my-site.css">
 </head>
 
-<body class="bg-shark flex flex-col h-screen justify-between">
+<body class="bg-shark">
     <!-- Navbar -->
-    <header>
+    <header class="sticky border-b-2 top-0 z-50 bg-shark border-rose">
         <div class="flex justify-between items-center py-5 mx-4 md:px-20">
             <div>
                 <a href="{% url 'index' %}">
@@ -31,6 +31,11 @@
             <div class="items-end flex-1 text-white font-bold hidden md:flex">
                 <nav class="flex-1">
                     <ul class="flex justify-end flex-1">
+                        <li class="px-4">
+                            <a href="{% url 'projects' %}" class="hover:text-rose">
+                                Projetos
+                            </a>
+                        </li>
                         <li class="px-4">
                             <a href="#" class="hover:text-rose">
                                 Formações
@@ -59,7 +64,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bottom-0 mb-5 mx-4 md:px-20">
+    <footer class="mx-4 py-5 bg-shark md:px-20">
+        <hr class="text-white">
         <div class="flex justify-between items-center text-white">
             <p class="text-gray-400 text-xs">&copy; {% now 'Y' %} Stévillis Sousa</p>
             <ul class="flex justify-center">

@@ -7,6 +7,8 @@ module.exports = {
       white: "#fff",
       shark: "#242426",
       rose: "#ff0066",
+      tuna: "#353537",
+      amber: "#ffc107",
     },
   },
   variants: {
