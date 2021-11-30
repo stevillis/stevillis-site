@@ -27,7 +27,7 @@
                     <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
                 </a>
             </div>
-            <i class="fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
+            <i class="hamburger-menu fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
             <div class="items-end flex-1 text-white font-bold hidden md:flex">
                 <nav class="flex-1">
                     <ul class="flex justify-end flex-1">
@@ -55,6 +55,33 @@
                 </nav>
             </div>
         </div>
+        <!-- Mobile menu -->
+        <div class="hidden mobile-menu">
+            <nav>
+                <ul class="text-white">
+                    <li>
+                        <a href="{% url 'projects' %}" class="block text-sm px-2 py-4 font-semibold hover:bg-rose">
+                            Projetos
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-sm px-2 py-4 font-semibold hover:bg-rose">
+                            Formações
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-sm px-2 py-4 font-semibold hover:bg-rose">
+                            Sobre
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="block text-sm px-2 py-4 font-semibold hover:bg-rose">
+                            Contato
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Content -->
@@ -78,6 +105,17 @@
             </ul>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const hamburgerMenu = document.querySelector(".hamburger-menu");
+            const mobileMenu = document.querySelector(".mobile-menu");
+
+            hamburgerMenu.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+        });
+    </script>
 </body>
 
 </html>
