@@ -21,7 +21,7 @@
 <body class="bg-shark">
     <!-- Navbar -->
     <header class="sticky border-b-2 top-0 z-50 bg-shark border-rose">
-        <div class="flex justify-between items-center py-5 mx-4 md:px-20">
+        <div class="header-content flex justify-between items-center py-5 mx-4 md:px-20">
             <div>
                 <a href="{% url 'index' %}">
                     <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
@@ -56,7 +56,7 @@
             </div>
         </div>
         <!-- Mobile menu -->
-        <div class="hidden mobile-menu md:px-20 md:hidden">
+        <div class="hidden mobile-menu absolute right-0 px-4 w-screen opacity-95 bg-tuna md:px-20 md:hidden">
             <nav>
                 <ul class="text-white">
                     <li>
@@ -107,12 +107,27 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", () => {
+            const main = document.querySelector("main");
+            const footer = document.querySelector("footer");
             const hamburgerMenu = document.querySelector(".hamburger-menu");
             const mobileMenu = document.querySelector(".mobile-menu");
+            const headerContent = document.querySelector(".header-content");
 
             hamburgerMenu.addEventListener("click", () => {
                 mobileMenu.classList.toggle("hidden");
+            });
+
+            main.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+
+            footer.addEventListener("click", () => {
+                mobileMenu.classList.add("hidden");
+            });
+
+            headerContent.addEventListener("click", (event) => {
+                if (!event.target.classList.contains("hamburger-menu")) mobileMenu.classList.add("hidden");
             });
         });
     </script>
