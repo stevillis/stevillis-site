@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-sg%rcq19oou=6m1rh-a^y(yt51un3vb*y0(+_l-hmd+5d&hb4f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'stevillis.herokuapp.com']
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "stevillis.herokuapp.com"]
 
 # Application definition
 
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = "pt-br"
 
 LANGUAGES = (
-    ("pt-br", _("Portuguese")),
+    ("pt-BR", _("Portuguese")),
     ("en", _("English")),
 )
 
