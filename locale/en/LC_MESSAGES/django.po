@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-05 15:22-0400\n"
-"PO-Revision-Date: 2021-12-05 15:23-0400\n"
+"POT-Creation-Date: 2021-12-05 16:53-0400\n"
+"PO-Revision-Date: 2021-12-05 16:55-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -32,21 +32,33 @@ msgstr "Presentation Video - Django Workshop presented by me"
 msgid "Projetos"
 msgstr "Projects"
 
-#: .\mysite\templates\projects.html:16 .\mysite\templates\projects.html:20
+#: .\mysite\templates\projects.html:15 .\mysite\templates\projects.html:18
 msgid "Sistema de Registro de Certificados e Diplomas"
 msgstr "Certificate and Diploma Registration System"
 
-#: .\mysite\templates\projects.html:23
+#: .\mysite\templates\projects.html:21
 msgid "Status"
 msgstr "Status"
 
-#: .\mysite\templates\projects.html:23
+#: .\mysite\templates\projects.html:21
 msgid "Em desenvolvimento"
 msgstr "Under development"
 
-#: .\mysite\templates\projects.html:26
+#: .\mysite\templates\projects.html:24
 msgid "Tecnologias"
 msgstr "Tecnologies"
+
+#: .\mysite\templates\projects.html:32
+msgid "Live Preview"
+msgstr "Live Preview"
+
+#: .\mysite\templates\projects.html:36
+msgid "Usuário"
+msgstr "User"
+
+#: .\mysite\templates\projects.html:37
+msgid "Senha"
+msgstr "Password"
 
 #: .\stevillis_site\settings.py:124
 msgid "Portuguese"
