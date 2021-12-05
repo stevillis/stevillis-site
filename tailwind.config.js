@@ -9,6 +9,7 @@ module.exports = {
       rose: "#ff0066",
       tuna: "#353537",
       amber: "#ffc107",
+      emperor: "#505050",
     },
   },
   variants: {
