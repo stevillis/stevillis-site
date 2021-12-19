@@ -1,10 +1,17 @@
 from django.contrib import admin
 
-from mysite.models import Category
+from mysite.models import Category, Institution
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    fields = ['name']
+    list_display = ('name', 'created_at', 'updated_at',)
+    search_fields = ['name']
+
+
+@admin.register(Institution)
+class InstitutionAdmin(admin.ModelAdmin):
     fields = ['name']
     list_display = ('name', 'created_at', 'updated_at',)
     search_fields = ['name']

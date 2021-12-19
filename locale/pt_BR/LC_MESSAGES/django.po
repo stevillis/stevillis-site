@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 16:41-0400\n"
-"PO-Revision-Date: 2021-12-19 16:31-0400\n"
+"POT-Creation-Date: 2021-12-19 17:36-0400\n"
+"PO-Revision-Date: 2021-12-19 17:37-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -30,9 +30,29 @@ msgstr "Atualizado em"
 msgid "Category ID"
 msgstr "ID Categoria"
 
-#: .\mysite\models.py:16
+#: .\mysite\models.py:16 .\mysite\models.py:29
 msgid "Name"
 msgstr "Nome"
+
+#: .\mysite\models.py:20
+msgid "Category"
+msgstr "Categoria"
+
+#: .\mysite\models.py:21
+msgid "Categories"
+msgstr "Categorias"
+
+#: .\mysite\models.py:28
+msgid "Institution ID"
+msgstr "ID Instituição"
+
+#: .\mysite\models.py:33
+msgid "Institution"
+msgstr "Instituição"
+
+#: .\mysite\models.py:34
+msgid "Instituitions"
+msgstr "Instituições"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"

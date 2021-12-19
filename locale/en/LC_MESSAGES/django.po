@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 16:41-0400\n"
-"PO-Revision-Date: 2021-12-19 16:30-0400\n"
+"POT-Creation-Date: 2021-12-19 17:36-0400\n"
+"PO-Revision-Date: 2021-12-19 17:38-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -27,14 +27,32 @@ msgid "Updated at"
 msgstr "Updated at"
 
 #: .\mysite\models.py:15
-#, fuzzy
-#| msgid "ID Categoria"
 msgid "Category ID"
 msgstr "Category ID"
 
-#: .\mysite\models.py:16
+#: .\mysite\models.py:16 .\mysite\models.py:29
 msgid "Name"
 msgstr "Name"
+
+#: .\mysite\models.py:20
+msgid "Category"
+msgstr "Category"
+
+#: .\mysite\models.py:21
+msgid "Categories"
+msgstr "Categories"
+
+#: .\mysite\models.py:28
+msgid "Institution ID"
+msgstr "Institution ID"
+
+#: .\mysite\models.py:33
+msgid "Institution"
+msgstr "Institution"
+
+#: .\mysite\models.py:34
+msgid "Instituitions"
+msgstr "Instituitions"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"
@@ -121,7 +139,5 @@ msgstr "Contact"
 #~ msgid "Nome"
 #~ msgstr "Name"
 
-#~ msgid ""
-#~ "Construindo grandes coisas e não esperando que grandes coisas sejam "
-#~ "construídas"
+#~ msgid "Construindo grandes coisas e não esperando que grandes coisas sejam construídas"
 #~ msgstr "Building great things and not waiting for great things to build"

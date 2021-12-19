@@ -17,6 +17,21 @@ class Category(BaseModel):
 
     class Meta:
         db_table = 'category'
+        verbose_name = _('Category')
+        verbose_name_plural = _('Categories')
+
+    def __str__(self):
+        return self.name
+
+
+class Institution(BaseModel):
+    id_institution = models.AutoField(_("Institution ID"), primary_key=True)
+    name = models.CharField(_("Name"), max_length=40)
+
+    class Meta:
+        db_table = 'institution'
+        verbose_name = _('Institution')
+        verbose_name_plural = _('Instituitions')
 
     def __str__(self):
         return self.name
