@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 17:36-0400\n"
-"PO-Revision-Date: 2021-12-19 17:38-0400\n"
+"POT-Creation-Date: 2021-12-19 17:59-0400\n"
+"PO-Revision-Date: 2021-12-19 18:01-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -30,7 +30,7 @@ msgstr "Updated at"
 msgid "Category ID"
 msgstr "Category ID"
 
-#: .\mysite\models.py:16 .\mysite\models.py:29
+#: .\mysite\models.py:16 .\mysite\models.py:29 .\mysite\models.py:42
 msgid "Name"
 msgstr "Name"
 
@@ -53,6 +53,34 @@ msgstr "Institution"
 #: .\mysite\models.py:34
 msgid "Instituitions"
 msgstr "Instituitions"
+
+#: .\mysite\models.py:41
+msgid "Formation ID"
+msgstr "Formation ID"
+
+#: .\mysite\models.py:43
+msgid "Workload"
+msgstr "Workload"
+
+#: .\mysite\models.py:44
+msgid "Curriculum Map"
+msgstr "Curriculum Map"
+
+#: .\mysite\models.py:45
+msgid "Start Date"
+msgstr "Start Date"
+
+#: .\mysite\models.py:46
+msgid "End Date"
+msgstr "End Date"
+
+#: .\mysite\models.py:50
+msgid "Formation"
+msgstr "Formation"
+
+#: .\mysite\models.py:51
+msgid "Formations"
+msgstr "Formations"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"
