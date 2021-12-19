@@ -6,5 +6,5 @@ from mysite.models import Category
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     fields = ['name']
-    list_display = ('name',)
+    list_display = ('name', 'created_at', 'updated_at',)
     search_fields = ['name']

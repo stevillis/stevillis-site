@@ -11,9 +11,12 @@ class BaseModel(models.Model):
         abstract = True
 
 
-class Category(models.Model):
+class Category(BaseModel):
     id_category = models.AutoField(_("Category ID"), primary_key=True)
     name = models.CharField(_("Name"), max_length=40)
+
+    class Meta:
+        db_table = 'category'
 
     def __str__(self):
         return self.name
