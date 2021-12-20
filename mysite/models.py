@@ -44,7 +44,7 @@ class Course(BaseModel):
     start_date = models.DateField(_('Start Date'))
     end_date = models.DateField(_('End Date'))
     categories = models.ManyToManyField(Category, related_name='courses')
-    institution = models.ForeignKey(Institution, on_delete=models.SET_NULL, null=True)
+    institution = models.ForeignKey(Institution, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         db_table = 'course'
