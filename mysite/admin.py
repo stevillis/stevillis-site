@@ -19,6 +19,7 @@ class CategoryAdmin(admin.ModelAdmin):
     fields = ['name']
     list_display = ('name', 'created_at', 'updated_at',)
     search_fields = ['name']
+    ordering = ['name']
 
 
 @admin.register(Institution)
@@ -26,6 +27,7 @@ class InstitutionAdmin(admin.ModelAdmin):
     fields = ['name']
     list_display = ('name', 'created_at', 'updated_at',)
     search_fields = ['name']
+    ordering = ['name']
 
 
 @admin.register(Formation)
@@ -33,6 +35,7 @@ class FormationAdmin(admin.ModelAdmin):
     fields = ['name', 'workload', 'description', 'start_date', 'end_date']
     list_display = ('name', 'workload', 'start_date', 'end_date', 'created_at', 'updated_at',)
     search_fields = ['name']
+    ordering = ['name']
 
 
 @admin.register(Course)
@@ -45,3 +48,4 @@ class CourseAdmin(admin.ModelAdmin):
         ('categories', custom_titled_filter(_('Category')))
     ]
     search_fields = ['name']
+    ordering = ['-end_date']
