@@ -58,8 +58,8 @@ class Course(BaseModel):
 class Formation(BaseModel):
     id_formation = models.AutoField(_('Formation ID'), primary_key=True)
     name = models.CharField(_('Name'), max_length=100)
-    workload = models.CharField(_('Workload'), max_length=20, null=True)
-    curriculum_map = models.TextField(_('Curriculum Map'))
+    workload = models.CharField(_('Workload'), max_length=20)
+    curriculum_map = models.TextField(_('Curriculum Map'), null=True, blank=True)
     start_date = models.DateField(_('Start Date'))
     end_date = models.DateField(_('End Date'))
     courses = models.ManyToManyField(Course, related_name='formation')
