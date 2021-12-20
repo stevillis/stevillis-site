@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mysite.models import Category, Institution, Formation
+from mysite.models import Category, Institution, Formation, Course
 
 
 @admin.register(Category)
@@ -21,4 +21,11 @@ class InstitutionAdmin(admin.ModelAdmin):
 class FormationAdmin(admin.ModelAdmin):
     fields = ['name', 'workload', 'curriculum_map', 'start_date', 'end_date']
     list_display = ('name', 'workload', 'start_date', 'end_date', 'created_at', 'updated_at',)
+    search_fields = ['name']
+
+
+@admin.register(Course)
+class CourseAdmin(admin.ModelAdmin):
+    fields = ['name', 'workload', 'curriculum_map', 'start_date', 'end_date', 'institution', 'categories']
+    list_display = ('name', 'workload', 'start_date', 'end_date', 'created_at', 'updated_at', 'institution',)
     search_fields = ['name']

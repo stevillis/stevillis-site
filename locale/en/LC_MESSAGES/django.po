@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 17:59-0400\n"
-"PO-Revision-Date: 2021-12-19 18:01-0400\n"
+"POT-Creation-Date: 2021-12-19 22:28-0400\n"
+"PO-Revision-Date: 2021-12-19 22:28-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -30,7 +30,8 @@ msgstr "Updated at"
 msgid "Category ID"
 msgstr "Category ID"
 
-#: .\mysite\models.py:16 .\mysite\models.py:29 .\mysite\models.py:42
+#: .\mysite\models.py:16 .\mysite\models.py:29 .\mysite\models.py:41
+#: .\mysite\models.py:60
 msgid "Name"
 msgstr "Name"
 
@@ -51,34 +52,42 @@ msgid "Institution"
 msgstr "Institution"
 
 #: .\mysite\models.py:34
-msgid "Instituitions"
-msgstr "Instituitions"
+msgid "Institutions"
+msgstr "Institutions"
 
-#: .\mysite\models.py:41
-msgid "Formation ID"
-msgstr "Formation ID"
-
-#: .\mysite\models.py:43
+#: .\mysite\models.py:42 .\mysite\models.py:61
 msgid "Workload"
 msgstr "Workload"
 
-#: .\mysite\models.py:44
+#: .\mysite\models.py:43 .\mysite\models.py:62
 msgid "Curriculum Map"
 msgstr "Curriculum Map"
 
-#: .\mysite\models.py:45
+#: .\mysite\models.py:44 .\mysite\models.py:63
 msgid "Start Date"
 msgstr "Start Date"
 
-#: .\mysite\models.py:46
+#: .\mysite\models.py:45 .\mysite\models.py:64
 msgid "End Date"
 msgstr "End Date"
 
-#: .\mysite\models.py:50
+#: .\mysite\models.py:51
+msgid "Course"
+msgstr "Course"
+
+#: .\mysite\models.py:52
+msgid "Courses"
+msgstr "Courses"
+
+#: .\mysite\models.py:59
+msgid "Formation ID"
+msgstr "Formation ID"
+
+#: .\mysite\models.py:69
 msgid "Formation"
 msgstr "Formation"
 
-#: .\mysite\models.py:51
+#: .\mysite\models.py:70
 msgid "Formations"
 msgstr "Formations"
 
