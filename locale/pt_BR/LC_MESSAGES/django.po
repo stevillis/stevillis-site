@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 22:28-0400\n"
-"PO-Revision-Date: 2021-12-19 22:28-0400\n"
+"POT-Creation-Date: 2021-12-19 23:32-0400\n"
+"PO-Revision-Date: 2021-12-19 23:21-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -59,7 +59,7 @@ msgstr "Instituições"
 msgid "Workload"
 msgstr "Carga Horária"
 
-#: .\mysite\models.py:43 .\mysite\models.py:62
+#: .\mysite\models.py:43
 msgid "Curriculum Map"
 msgstr "Ementa"
 
@@ -82,6 +82,10 @@ msgstr "Cursos"
 #: .\mysite\models.py:59
 msgid "Formation ID"
 msgstr "ID Formação"
+
+#: .\mysite\models.py:62
+msgid "Description"
+msgstr "Descrição"
 
 #: .\mysite\models.py:69
 msgid "Formation"

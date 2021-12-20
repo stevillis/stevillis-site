@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 22:28-0400\n"
-"PO-Revision-Date: 2021-12-19 22:28-0400\n"
+"POT-Creation-Date: 2021-12-19 23:32-0400\n"
+"PO-Revision-Date: 2021-12-19 23:21-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -59,7 +59,7 @@ msgstr "Institutions"
 msgid "Workload"
 msgstr "Workload"
 
-#: .\mysite\models.py:43 .\mysite\models.py:62
+#: .\mysite\models.py:43
 msgid "Curriculum Map"
 msgstr "Curriculum Map"
 
@@ -82,6 +82,10 @@ msgstr "Courses"
 #: .\mysite\models.py:59
 msgid "Formation ID"
 msgstr "Formation ID"
+
+#: .\mysite\models.py:62
+msgid "Description"
+msgstr "Description"
 
 #: .\mysite\models.py:69
 msgid "Formation"
@@ -176,5 +180,7 @@ msgstr "Contact"
 #~ msgid "Nome"
 #~ msgstr "Name"
 
-#~ msgid "Construindo grandes coisas e não esperando que grandes coisas sejam construídas"
+#~ msgid ""
+#~ "Construindo grandes coisas e não esperando que grandes coisas sejam "
+#~ "construídas"
 #~ msgstr "Building great things and not waiting for great things to build"
