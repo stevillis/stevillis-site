@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {% trans 'Courses' %}
+{% endblock title %}
+
+{% block content %}
+    <h1 class="text-4xl text-center mt-10 text-rose md:text-7xl">{% trans 'Formations' %}</h1>
+    <hr class="my-4">
+    <div class="min-h-screen">
+        {% for formation in formations_qs %}
+            <p class="text-amber text-center text-4xl font-semibold py-4">
+                {{ formation }}<br>
+                {{ formation.courses.count }} {% trans 'cursos' %}<br>
+                {{ formation.courses.first.institution.name }}
+            </p>
+            <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                {% for course in formation.courses.all %}
+                    <div class="w-full cursor-pointer rounded-md shadow-md shadow-gray-200 bg-tuna hover:shadow-2xl hover:bg-emperor">
+                        <div class="p-4">
+                            <p class="text-amber text-xl font-semibold py-2">
+                                <a href="#" class="hover:underline">
+                                    {{ course.name }}<br>
+                                </a>
+                                <span class="text-sm">{{ course.workload }}</span>
+                            </p>
+                            <p class="font-semibold text-base">
+                                {% trans 'Ementa' %}:<br>
+                            </p>
+                            <p class="font-light text-gray-700 text-justify line-clamp-3">
+                                {{ course.curriculum_map|linebreaks|stringformat:".250s" }}
+                                {% if course.curriculum_map|length > 300 %}
+                                    ...<br>
+                                {% endif %}
+                            </p>
+                            <span class="inline-block">
+                                {% if course.curriculum_map|length > 300 %}
+                                    <a href="#" class="hover:underline hover:text-rose">{% trans 'Ver mais' %}</a>
+                                {% endif %}
+                            </span>
+                            <div class="flex flex-wrap mt-4 space-x-4 align-bottom">
+                                <div class="flex flex-col space-y-0">
+                                    <p class="font-semibold text-base">
+                                        {% trans 'Categorias' %}:<br>
+                                        {% for category in course.categories.all %}
+                                            <a href="#" class="hover:underline hover:text-rose">{{ category.name }}</a>
+                                            &nbsp;
+                                        {% endfor %}
+                                    </p>
+                                    <p class="font-semibold text-sm text-springgreen">{% trans 'Data de Início' %}: {{ course.start_date }}</p>
+                                    <p class="font-semibold text-sm text-springgreen">{% trans 'Data de Conclusão' %}: {{ course.end_date }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock content %}

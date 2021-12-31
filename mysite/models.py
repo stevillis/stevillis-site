@@ -49,6 +49,7 @@ class Formation(BaseModel):
         db_table = 'formation'
         verbose_name = _('Formation')
         verbose_name_plural = _('Formations')
+        ordering = ['-end_date']
 
     def __str__(self):
         return self.name
@@ -62,12 +63,13 @@ class Course(BaseModel):
     end_date = models.DateField(_('End Date'))
     categories = models.ManyToManyField(Category, related_name='courses')
     institution = models.ForeignKey(Institution, on_delete=models.SET_NULL, null=True, blank=True)
-    formation = models.ManyToManyField(Formation, related_name='courses', null=True, blank=True)
+    formation = models.ManyToManyField(Formation, related_name='courses', blank=True)
 
     class Meta:
         db_table = 'course'
         verbose_name = _('Course')
         verbose_name_plural = _('Courses')
+        ordering = ['-end_date']
 
     def __str__(self):
         return self.name

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-19 23:32-0400\n"
-"PO-Revision-Date: 2021-12-19 23:21-0400\n"
+"POT-Creation-Date: 2021-12-31 02:48-0400\n"
+"PO-Revision-Date: 2021-12-31 02:50-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -17,6 +17,18 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Poedit 3.0.1\n"
+
+#: .\mysite\admin.py:46 .\mysite\models.py:33
+msgid "Institution"
+msgstr "Instituição"
+
+#: .\mysite\admin.py:47 .\mysite\models.py:50
+msgid "Formation"
+msgstr "Formação"
+
+#: .\mysite\admin.py:48 .\mysite\models.py:20
+msgid "Category"
+msgstr "Categoria"
 
 #: .\mysite\models.py:7
 msgid "Created at"
@@ -30,14 +42,10 @@ msgstr "Atualizado em"
 msgid "Category ID"
 msgstr "ID Categoria"
 
-#: .\mysite\models.py:16 .\mysite\models.py:29 .\mysite\models.py:41
-#: .\mysite\models.py:60
+#: .\mysite\models.py:16 .\mysite\models.py:29 .\mysite\models.py:42
+#: .\mysite\models.py:59
 msgid "Name"
 msgstr "Nome"
-
-#: .\mysite\models.py:20
-msgid "Category"
-msgstr "Categoria"
 
 #: .\mysite\models.py:21
 msgid "Categories"
@@ -47,53 +55,70 @@ msgstr "Categorias"
 msgid "Institution ID"
 msgstr "ID Instituição"
 
-#: .\mysite\models.py:33
-msgid "Institution"
-msgstr "Instituição"
-
 #: .\mysite\models.py:34
 msgid "Institutions"
 msgstr "Instituições"
 
-#: .\mysite\models.py:42 .\mysite\models.py:61
-msgid "Workload"
-msgstr "Carga Horária"
-
-#: .\mysite\models.py:43
-msgid "Curriculum Map"
-msgstr "Ementa"
-
-#: .\mysite\models.py:44 .\mysite\models.py:63
-msgid "Start Date"
-msgstr "Data de Início"
-
-#: .\mysite\models.py:45 .\mysite\models.py:64
-msgid "End Date"
-msgstr "Data de Conclusão"
-
-#: .\mysite\models.py:51
-msgid "Course"
-msgstr "Curso"
-
-#: .\mysite\models.py:52
-msgid "Courses"
-msgstr "Cursos"
-
-#: .\mysite\models.py:59
+#: .\mysite\models.py:41
 msgid "Formation ID"
 msgstr "ID Formação"
 
-#: .\mysite\models.py:62
+#: .\mysite\models.py:43 .\mysite\models.py:60
+msgid "Workload"
+msgstr "Carga Horária"
+
+#: .\mysite\models.py:44
 msgid "Description"
 msgstr "Descrição"
 
-#: .\mysite\models.py:69
-msgid "Formation"
-msgstr "Formação"
+#: .\mysite\models.py:45 .\mysite\models.py:62
+msgid "Start Date"
+msgstr "Data de Início"
 
-#: .\mysite\models.py:70
+#: .\mysite\models.py:46 .\mysite\models.py:63
+msgid "End Date"
+msgstr "Data de Conclusão"
+
+#: .\mysite\models.py:51 .\mysite\templates\formations.html:10
+#: .\stevillis_site\templates\base.html:46
 msgid "Formations"
 msgstr "Formações"
+
+#: .\mysite\models.py:61
+msgid "Curriculum Map"
+msgstr "Ementa"
+
+#: .\mysite\models.py:70
+msgid "Course"
+msgstr "Curso"
+
+#: .\mysite\models.py:71 .\mysite\templates\formations.html:6
+msgid "Courses"
+msgstr "Cursos"
+
+#: .\mysite\templates\formations.html:16
+msgid "cursos"
+msgstr "cursos"
+
+#: .\mysite\templates\formations.html:30
+msgid "Ementa"
+msgstr "Ementa"
+
+#: .\mysite\templates\formations.html:40
+msgid "Ver mais"
+msgstr "Ver mais"
+
+#: .\mysite\templates\formations.html:46
+msgid "Categorias"
+msgstr "Categorias"
+
+#: .\mysite\templates\formations.html:52
+msgid "Data de Início"
+msgstr "Data de Início"
+
+#: .\mysite\templates\formations.html:53
+msgid "Data de Conclusão"
+msgstr "Data de Conclusão"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"
@@ -150,11 +175,6 @@ msgstr "Inglês"
 msgid "Home"
 msgstr "Home"
 
-#: .\stevillis_site\templates\base.html:46
-#: .\stevillis_site\templates\base.html:79
-msgid "Cursos"
-msgstr "Cursos"
-
 #: .\stevillis_site\templates\base.html:51
 #: .\stevillis_site\templates\base.html:84
 msgid "Sobre"
@@ -164,6 +184,10 @@ msgstr "Sobre"
 #: .\stevillis_site\templates\base.html:89
 msgid "Contato"
 msgstr "Contato"
+
+#: .\stevillis_site\templates\base.html:79
+msgid "Formações"
+msgstr "Formações"
 
 #~ msgid "Created by"
 #~ msgstr "Criado por"

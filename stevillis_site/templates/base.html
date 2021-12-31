@@ -5,122 +5,122 @@
 <html lang="{{ language }}">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %}{% endblock %}</title>
 
     <link rel="shortcut icon" href="{% static 'mysite/img/logo.ico' %}" type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-        integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" type="text/css" href="https://stevillis.github.io/style/storage/my-site.css">
 </head>
 
 <body class="bg-shark">
-    <!-- Navbar -->
-    <header class="sticky border-b-2 top-0 z-50 bg-shark border-rose">
-        <div class="header-content flex justify-between items-center py-5 mx-4 md:px-20">
-            <div>
-                <a href="{% url 'index' %}">
-                    <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
-                </a>
-            </div>
-            <i class="hamburger-menu fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
-            <div class="items-end flex-1 text-white font-bold hidden md:flex">
-                <nav class="flex-1">
-                    <ul class="flex justify-end flex-1">
-                        <li class="px-4">
-                            <a href="{% url 'index' %}" class="hover:text-rose">
-                                {% trans 'Home' %}
-                            </a>
-                        </li>
-                        <li class="px-4">
-                            <a href="{% url 'projects' %}" class="hover:text-rose">
-                                {% trans 'Projetos' %}
-                            </a>
-                        </li>
-                        <li class="px-4">
-                            <a href="#" class="hover:text-rose">
-                                {% trans 'Cursos' %}
-                            </a>
-                        </li>
-                        <li class="px-4">
-                            <a href="#" class="hover:text-rose">
-                                {% trans 'Sobre' %}
-                            </a>
-                        </li>
-                        <li class="px-4">
-                            <a href="#" class="hover:text-rose">
-                                {% trans 'Contato' %}
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+<!-- Navbar -->
+<header class="sticky border-b-2 top-0 z-50 bg-shark border-rose">
+    <div class="header-content flex justify-between items-center py-5 mx-4 md:px-20">
+        <div>
+            <a href="{% url 'index' %}">
+                <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
+            </a>
         </div>
-        <!-- Mobile menu -->
-        <div class="hidden mobile-menu absolute right-0 w-screen opacity-95 bg-tuna px-4 md:px-20 md:hidden">
-            <nav>
-                <ul class="text-white">
-                    <li>
-                        <a href="{% url 'index' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+        <i class="hamburger-menu fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
+        <div class="items-end flex-1 text-white font-bold hidden md:flex">
+            <nav class="flex-1">
+                <ul class="flex justify-end flex-1">
+                    <li class="px-4">
+                        <a href="{% url 'index' %}" class="hover:text-rose">
                             {% trans 'Home' %}
                         </a>
                     </li>
-                    <li>
-                        <a href="{% url 'projects' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                    <li class="px-4">
+                        <a href="{% url 'projects' %}" class="hover:text-rose">
                             {% trans 'Projetos' %}
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                            {% trans 'Cursos' %}
+                    <li class="px-4">
+                        <a href="{% url 'formations' %}" class="hover:text-rose">
+                            {% trans 'Formations' %}
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                    <li class="px-4">
+                        <a href="#" class="hover:text-rose">
                             {% trans 'Sobre' %}
                         </a>
                     </li>
-                    <li>
-                        <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                    <li class="px-4">
+                        <a href="#" class="hover:text-rose">
                             {% trans 'Contato' %}
                         </a>
                     </li>
                 </ul>
             </nav>
         </div>
-    </header>
-
-    <!-- Content -->
-    <main class="mx-4 md:px-20">
-        {% block content %}
-        {% endblock %}
-    </main>
-
-    <!-- Footer -->
-    <footer class="mx-4 py-5 bg-shark md:px-20">
-        <div class="flex justify-between items-center text-white py-5">
-            <div>
-                <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
-            </div>
-            <ul class="flex justify-center">
-                <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
-                    <a href="https://www.linkedin.com/in/stevillis/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+    <!-- Mobile menu -->
+    <div class="hidden mobile-menu absolute right-0 w-screen opacity-95 bg-tuna px-4 md:px-20 md:hidden">
+        <nav>
+            <ul class="text-white">
+                <li>
+                    <a href="{% url 'index' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                        {% trans 'Home' %}
+                    </a>
                 </li>
-                <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
-                    <a href="https://github.com/stevillis" target="_blank"><i class="fab fa-github"></i></a>
+                <li>
+                    <a href="{% url 'projects' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                        {% trans 'Projetos' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'formations' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                        {% trans 'Formações' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                        {% trans 'Sobre' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                        {% trans 'Contato' %}
+                    </a>
                 </li>
             </ul>
-        </div>
-        <hr class="text-emperor">
-        <p class="text-gray-400 text-sm text-white text-center p-5">&copy; {% now 'Y' %} Stévillis Sousa</p>
-    </footer>
+        </nav>
+    </div>
+</header>
 
-    <!-- Scripts -->
-    <script src="{% static 'mysite/js/menu.js' %}"></script>
+<!-- Content -->
+<main class="mx-4 text-white md:px-20">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="mx-4 py-5 bg-shark md:px-20">
+    <div class="flex justify-between items-center text-white py-5">
+        <div>
+            <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
+        </div>
+        <ul class="flex justify-center">
+            <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
+                <a href="https://www.linkedin.com/in/stevillis/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </li>
+            <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
+                <a href="https://github.com/stevillis" target="_blank"><i class="fab fa-github"></i></a>
+            </li>
+        </ul>
+    </div>
+    <hr class="text-emperor">
+    <p class="text-gray-400 text-sm text-white text-center p-5">&copy; {% now 'Y' %} Stévillis Sousa</p>
+</footer>
+
+<!-- Scripts -->
+<script src="{% static 'mysite/js/menu.js' %}"></script>
 </body>
 
 </html>
