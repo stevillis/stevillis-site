@@ -11,11 +11,24 @@
     <hr class="my-4">
     <div class="min-h-screen">
         {% for formation in formations_qs %}
-            <p class="text-amber text-center text-4xl font-semibold py-4">
-                {{ formation }}<br>
-                {{ formation.courses.count }} {% trans 'cursos' %} - {{ formation.workload }}<br>
-                {{ formation.courses.first.institution.name }}
-            </p>
+            <div class="text-center">
+
+                <p class="text-amber text-4xl font-semibold">
+                    {{ formation }} - {{ formation.courses.first.institution.name }}
+                </p>
+                <p class="text-amber text-center text-2xl font-semibold">
+                    {{ formation.courses.count }} {% trans 'cursos' %} - {{ formation.workload }}<br>
+                </p>
+                <p class="text-sm text-springgreen">{% trans 'Data de Início' %}: {{ formation.start_date }}</p>
+                <p class="text-sm text-springgreen">
+                    {% trans 'Data de Conslusão' %}:
+                    {% if formation.end_date %}
+                        {{ formation.end_date }}
+                    {% else %}
+                        {% trans 'Em andamento' %}
+                    {% endif %}
+                </p>
+            </div>
             <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
                 {% for course in formation.courses.all %}
                     <div class="w-full cursor-pointer rounded-md shadow-md shadow-gray-200 bg-tuna hover:shadow-2xl hover:bg-emperor">
