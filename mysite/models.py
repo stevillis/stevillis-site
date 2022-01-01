@@ -43,7 +43,7 @@ class Formation(BaseModel):
     workload = models.CharField(_('Workload'), max_length=20)
     description = models.TextField(_('Description'), null=True, blank=True)
     start_date = models.DateField(_('Start Date'))
-    end_date = models.DateField(_('End Date'))
+    end_date = models.DateField(_('End Date'), null=True, blank=True)
 
     class Meta:
         db_table = 'formation'
@@ -60,7 +60,7 @@ class Course(BaseModel):
     workload = models.CharField(_('Workload'), max_length=20)
     curriculum_map = models.TextField(_('Curriculum Map'))
     start_date = models.DateField(_('Start Date'))
-    end_date = models.DateField(_('End Date'))
+    end_date = models.DateField(_('End Date'), null=True, blank=True)
     categories = models.ManyToManyField(Category, related_name='courses')
     institution = models.ForeignKey(Institution, on_delete=models.SET_NULL, null=True, blank=True)
     formation = models.ManyToManyField(Formation, related_name='courses', blank=True)
