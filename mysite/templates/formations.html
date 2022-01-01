@@ -21,11 +21,11 @@
                 </p>
                 <p class="text-sm text-springgreen">{% trans 'Data de Início' %}: {{ formation.start_date }}</p>
                 <p class="text-sm text-springgreen">
-                    {% trans 'Data de Conslusão' %}:
+                    {% trans 'Data de Conclusão' %}:
                     {% if formation.end_date %}
                         {{ formation.end_date }}
                     {% else %}
-                        {% trans 'Em andamento' %}
+                        {% trans 'Não concluído' %}
                     {% endif %}
                 </p>
             </div>
@@ -62,8 +62,17 @@
                                             &nbsp;
                                         {% endfor %}
                                     </p>
-                                    <p class="font-semibold text-sm text-springgreen">{% trans 'Data de Início' %}: {{ course.start_date }}</p>
-                                    <p class="font-semibold text-sm text-springgreen">{% trans 'Data de Conclusão' %}: {{ course.end_date }}</p>
+                                    <p class="font-semibold text-sm text-springgreen">
+                                        {% trans 'Data de Início' %}: {{ course.start_date }}
+                                    </p>
+                                    <p class="font-semibold text-sm text-springgreen">
+                                        {% trans 'Data de Conclusão' %}:
+                                        {% if course.end_date %}
+                                            {{ course.end_date }}
+                                        {% else %}
+                                            {% trans 'Não concluído' %}
+                                        {% endif %}
+                                    </p>
                                 </div>
                             </div>
                         </div>
