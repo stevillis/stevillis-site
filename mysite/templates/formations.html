@@ -12,24 +12,23 @@
     <div class="min-h-screen">
         {% for formation in formations_qs %}
             <div class="text-center">
-
                 <p class="text-amber text-4xl font-semibold">
                     {{ formation }} - {{ formation.courses.first.institution.name }}
                 </p>
                 <p class="text-amber text-center text-2xl font-semibold">
-                    {{ formation.courses.count }} {% trans 'cursos' %} - {{ formation.workload }}<br>
+                    {{ formation.courses.count }} {% trans 'courses' %} - {{ formation.workload }}<br>
                 </p>
-                <p class="text-sm text-springgreen">{% trans 'Data de Início' %}: {{ formation.start_date }}</p>
+                <p class="text-sm text-springgreen">{% trans 'Start date' %}: {{ formation.start_date }}</p>
                 <p class="text-sm text-springgreen">
-                    {% trans 'Data de Conclusão' %}:
+                    {% trans 'End date' %}:
                     {% if formation.end_date %}
                         {{ formation.end_date }}
                     {% else %}
-                        {% trans 'Não concluído' %}
+                        {% trans 'Not concluded' %}
                     {% endif %}
                 </p>
             </div>
-            <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                 {% for course in formation.courses.all %}
                     <div class="w-full cursor-pointer rounded-md shadow-md shadow-gray-200 bg-tuna hover:shadow-2xl hover:bg-emperor">
                         <div class="p-4">
@@ -40,37 +39,37 @@
                                 <span class="text-sm">{{ course.workload }}</span>
                             </p>
                             <p class="font-semibold text-base">
-                                {% trans 'Ementa' %}:<br>
+                                {% trans 'Description' %}:<br>
                             </p>
                             <p class="font-light text-gray-700 text-justify line-clamp-3">
-                                {{ course.curriculum_map|linebreaks|stringformat:'.300s' }}
-                                {% if course.curriculum_map|length > 300 %}
+                                {{ course.description|default_if_none:''|stringformat:'.600s' }}
+                                {% if course.description|default_if_none:''|length > 600 %}
                                     ...<br>
                                 {% endif %}
                             </p>
-                            {% if course.curriculum_map|length > 300 %}
+                            {% if course.description|default_if_none:''|length > 600 %}
                                 <span class="inline-block">
-                                    <a href="#" class="hover:underline hover:text-rose">{% trans 'Ver mais' %}</a>
+                                    <a href="#" class="hover:underline hover:text-rose">{% trans 'See more' %}</a>
                             </span>
                             {% endif %}
                             <div class="flex flex-wrap mt-4 space-x-4 align-bottom">
                                 <div class="flex flex-col space-y-0">
                                     <p class="font-semibold text-base">
-                                        {% trans 'Categorias' %}:<br>
+                                        {% trans 'Categorys' %}:<br>
                                         {% for category in course.categories.all %}
                                             <a href="#" class="hover:underline hover:text-rose">{{ category.name }}</a>
                                             &nbsp;
                                         {% endfor %}
                                     </p>
                                     <p class="font-semibold text-sm text-springgreen">
-                                        {% trans 'Data de Início' %}: {{ course.start_date }}
+                                        {% trans 'Start date' %}: {{ course.start_date }}
                                     </p>
                                     <p class="font-semibold text-sm text-springgreen">
-                                        {% trans 'Data de Conclusão' %}:
+                                        {% trans 'End date' %}:
                                         {% if course.end_date %}
                                             {{ course.end_date }}
                                         {% else %}
-                                            {% trans 'Não concluído' %}
+                                            {% trans 'Not concluded' %}
                                         {% endif %}
                                     </p>
                                 </div>

@@ -40,7 +40,7 @@ class FormationAdmin(admin.ModelAdmin):
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
-    fields = ['name', 'workload', 'curriculum_map', 'start_date', 'end_date', 'institution', 'categories', 'formation']
+    fields = ['name', 'workload', 'description', 'curriculum_map', 'start_date', 'end_date', 'institution', 'categories', 'formation']
     list_display = ('name', 'workload', 'start_date', 'end_date', 'created_at', 'updated_at', 'institution',)
     list_filter = [
         ('institution', custom_titled_filter(_('Institution'))),

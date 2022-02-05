@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-31 23:43-0400\n"
-"PO-Revision-Date: 2021-12-31 23:44-0400\n"
+"POT-Creation-Date: 2022-02-05 10:48-0400\n"
+"PO-Revision-Date: 2022-02-05 10:50-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -67,15 +67,16 @@ msgstr "Formation ID"
 msgid "Workload"
 msgstr "Workload"
 
-#: .\mysite\models.py:44
+#: .\mysite\models.py:44 .\mysite\models.py:61
+#: .\mysite\templates\formations.html:42
 msgid "Description"
 msgstr "Description"
 
-#: .\mysite\models.py:45 .\mysite\models.py:62
+#: .\mysite\models.py:45 .\mysite\models.py:63
 msgid "Start Date"
 msgstr "Start Date"
 
-#: .\mysite\models.py:46 .\mysite\models.py:63
+#: .\mysite\models.py:46 .\mysite\models.py:64
 msgid "End Date"
 msgstr "End Date"
 
@@ -85,45 +86,41 @@ msgstr "End Date"
 msgid "Formations"
 msgstr "Formations"
 
-#: .\mysite\models.py:61
+#: .\mysite\models.py:62
 msgid "Curriculum Map"
 msgstr "Curriculum Map"
 
-#: .\mysite\models.py:70
+#: .\mysite\models.py:71
 msgid "Course"
 msgstr "Course"
 
-#: .\mysite\models.py:71
+#: .\mysite\models.py:72
 msgid "Courses"
 msgstr "Courses"
 
-#: .\mysite\templates\formations.html:20
-msgid "cursos"
+#: .\mysite\templates\formations.html:19
+msgid "courses"
 msgstr "courses"
 
-#: .\mysite\templates\formations.html:22 .\mysite\templates\formations.html:66
-msgid "Data de Início"
+#: .\mysite\templates\formations.html:21 .\mysite\templates\formations.html:65
+msgid "Start date"
 msgstr "Start Date"
 
-#: .\mysite\templates\formations.html:24 .\mysite\templates\formations.html:69
-msgid "Data de Conclusão"
+#: .\mysite\templates\formations.html:23 .\mysite\templates\formations.html:68
+msgid "End date"
 msgstr "End Date"
 
-#: .\mysite\templates\formations.html:28 .\mysite\templates\formations.html:73
-msgid "Não concluído"
+#: .\mysite\templates\formations.html:27 .\mysite\templates\formations.html:72
+msgid "Not concluded"
 msgstr "Not concluded"
 
-#: .\mysite\templates\formations.html:43
-msgid "Ementa"
-msgstr "Curriculum Map"
-
-#: .\mysite\templates\formations.html:53
-msgid "Ver mais"
+#: .\mysite\templates\formations.html:52
+msgid "See more"
 msgstr "See more"
 
-#: .\mysite\templates\formations.html:59
-msgid "Categorias"
-msgstr "Categories"
+#: .\mysite\templates\formations.html:58
+msgid "Categorys"
+msgstr "Categorys"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"
@@ -133,10 +130,13 @@ msgstr "Site under development"
 msgid "Vídeo de Apresentação - Oficina de Django ministrada por mim"
 msgstr "Presentation Video - Django Workshop presented by me"
 
-#: .\mysite\templates\projects.html:6 .\mysite\templates\projects.html:10
-#: .\stevillis_site\templates\base.html:41
+#: .\mysite\templates\projects.html:6 .\stevillis_site\templates\base.html:41
 #: .\stevillis_site\templates\base.html:74
 msgid "Projetos"
+msgstr "Projects"
+
+#: .\mysite\templates\projects.html:10
+msgid "Projects"
 msgstr "Projects"
 
 #: .\mysite\templates\projects.html:15 .\mysite\templates\projects.html:18
@@ -148,11 +148,11 @@ msgid "Status"
 msgstr "Status"
 
 #: .\mysite\templates\projects.html:21
-msgid "Em desenvolvimento"
+msgid "Under development"
 msgstr "Under development"
 
 #: .\mysite\templates\projects.html:24
-msgid "Tecnologias"
+msgid "Tecnologies"
 msgstr "Tecnologies"
 
 #: .\mysite\templates\projects.html:32
@@ -160,11 +160,11 @@ msgid "Live Preview"
 msgstr "Live Preview"
 
 #: .\mysite\templates\projects.html:36
-msgid "Usuário"
+msgid "User"
 msgstr "User"
 
 #: .\mysite\templates\projects.html:37
-msgid "Senha"
+msgid "Password"
 msgstr "Password"
 
 #: .\stevillis_site\settings.py:124
@@ -193,6 +193,33 @@ msgstr "Contact"
 #: .\stevillis_site\templates\base.html:79
 msgid "Formações"
 msgstr "Formations"
+
+#~ msgid "Em desenvolvimento"
+#~ msgstr "Under development"
+
+#~ msgid "Usuário"
+#~ msgstr "User"
+
+#~ msgid "Senha"
+#~ msgstr "Password"
+
+#~ msgid "cursos"
+#~ msgstr "courses"
+
+#~ msgid "Data de Início"
+#~ msgstr "Start Date"
+
+#~ msgid "Data de Conclusão"
+#~ msgstr "End Date"
+
+#~ msgid "Ementa"
+#~ msgstr "Curriculum Map"
+
+#~ msgid "Ver mais"
+#~ msgstr "See more"
+
+#~ msgid "Categorias"
+#~ msgstr "Categories"
 
 #, fuzzy
 #~| msgid "Em desenvolvimento"
