@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-05 10:48-0400\n"
-"PO-Revision-Date: 2022-02-05 10:50-0400\n"
+"POT-Creation-Date: 2022-02-06 18:10-0400\n"
+"PO-Revision-Date: 2022-02-06 18:10-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -18,109 +18,120 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: .\mysite\admin.py:46 .\mysite\models.py:33
+#: .\mysite\admin.py:46 .\mysite\models.py:32 .\mysite\templates\course.html:26
 msgid "Institution"
 msgstr "Institution"
 
-#: .\mysite\admin.py:47 .\mysite\models.py:50
+#: .\mysite\admin.py:47 .\mysite\models.py:49
 msgid "Formation"
 msgstr "Formation"
 
-#: .\mysite\admin.py:48 .\mysite\models.py:20
+#: .\mysite\admin.py:48 .\mysite\models.py:19
 msgid "Category"
 msgstr "Category"
 
-#: .\mysite\models.py:7
+#: .\mysite\models.py:6
 msgid "Created at"
 msgstr "Created at"
 
-#: .\mysite\models.py:8
+#: .\mysite\models.py:7
 msgid "Updated at"
 msgstr "Updated at"
 
-#: .\mysite\models.py:15
+#: .\mysite\models.py:14
 msgid "Category ID"
 msgstr "Category ID"
 
-#: .\mysite\models.py:16 .\mysite\models.py:29 .\mysite\models.py:42
-#: .\mysite\models.py:59
+#: .\mysite\models.py:15 .\mysite\models.py:28 .\mysite\models.py:41
+#: .\mysite\models.py:58
 msgid "Name"
 msgstr "Name"
 
-#: .\mysite\models.py:21
+#: .\mysite\models.py:20
 msgid "Categories"
 msgstr "Categories"
 
-#: .\mysite\models.py:28
+#: .\mysite\models.py:27
 msgid "Institution ID"
 msgstr "Institution ID"
 
-#: .\mysite\models.py:34
+#: .\mysite\models.py:33
 msgid "Institutions"
 msgstr "Institutions"
 
-#: .\mysite\models.py:41
+#: .\mysite\models.py:40
 msgid "Formation ID"
 msgstr "Formation ID"
 
-#: .\mysite\models.py:43 .\mysite\models.py:60
+#: .\mysite\models.py:42 .\mysite\models.py:59
+#: .\mysite\templates\course.html:51
 msgid "Workload"
 msgstr "Workload"
 
-#: .\mysite\models.py:44 .\mysite\models.py:61
-#: .\mysite\templates\formations.html:42
+#: .\mysite\models.py:43 .\mysite\models.py:60
+#: .\mysite\templates\course.html:32 .\mysite\templates\formations.html:40
 msgid "Description"
 msgstr "Description"
 
-#: .\mysite\models.py:45 .\mysite\models.py:63
+#: .\mysite\models.py:44 .\mysite\models.py:62
 msgid "Start Date"
 msgstr "Start Date"
 
-#: .\mysite\models.py:46 .\mysite\models.py:64
+#: .\mysite\models.py:45 .\mysite\models.py:63
 msgid "End Date"
 msgstr "End Date"
 
-#: .\mysite\models.py:51 .\mysite\templates\formations.html:6
+#: .\mysite\models.py:50 .\mysite\templates\formations.html:6
 #: .\mysite\templates\formations.html:10
 #: .\stevillis_site\templates\base.html:46
 msgid "Formations"
 msgstr "Formations"
 
-#: .\mysite\models.py:62
+#: .\mysite\models.py:61 .\mysite\templates\course.html:35
 msgid "Curriculum Map"
 msgstr "Curriculum Map"
 
-#: .\mysite\models.py:71
+#: .\mysite\models.py:70 .\mysite\templates\course.html:7
 msgid "Course"
 msgstr "Course"
 
-#: .\mysite\models.py:72
+#: .\mysite\models.py:71
 msgid "Courses"
 msgstr "Courses"
 
-#: .\mysite\templates\formations.html:19
-msgid "courses"
-msgstr "courses"
+#: .\mysite\services\course_service.py:13
+msgid "Course not found!"
+msgstr "Course not found!"
 
-#: .\mysite\templates\formations.html:21 .\mysite\templates\formations.html:65
+#: .\mysite\templates\course.html:15
+msgid "It's part of the formations"
+msgstr "It's part of the formations"
+
+#: .\mysite\templates\course.html:41 .\mysite\templates\formations.html:20
+#: .\mysite\templates\formations.html:61
 msgid "Start date"
 msgstr "Start Date"
 
-#: .\mysite\templates\formations.html:23 .\mysite\templates\formations.html:68
+#: .\mysite\templates\course.html:45 .\mysite\templates\formations.html:22
+#: .\mysite\templates\formations.html:64
 msgid "End date"
 msgstr "End Date"
 
-#: .\mysite\templates\formations.html:27 .\mysite\templates\formations.html:72
+#: .\mysite\templates\course.html:55 .\mysite\templates\formations.html:54
+msgid "Categorys"
+msgstr "Categorys"
+
+#: .\mysite\templates\formations.html:18
+msgid "courses"
+msgstr "courses"
+
+#: .\mysite\templates\formations.html:26 .\mysite\templates\formations.html:68
 msgid "Not concluded"
 msgstr "Not concluded"
 
-#: .\mysite\templates\formations.html:52
+#: .\mysite\templates\formations.html:47
 msgid "See more"
 msgstr "See more"
-
-#: .\mysite\templates\formations.html:58
-msgid "Categorys"
-msgstr "Categorys"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"

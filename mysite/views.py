@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from mysite.services import formation_services
+from mysite.services import course_service, formation_services
 
 
 def index(request):
@@ -19,3 +19,11 @@ def formations(request):
         'formations_qs': formations_qs,
     }
     return render(request, "formations.html", context)
+
+
+def course(request, pk):
+    course_found = course_service.get_course(pk=pk)
+    context = {
+        'course': course_found
+    }
+    return render(request, 'course.html', context)

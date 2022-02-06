@@ -10,7 +10,8 @@ module.exports = {
       tuna: "#353537",
       amber: "#ffc107",
       emperor: "#505050",
-      springgreen: "#00FF99",
+      springgreen: "#00ff99",
+      silver: "#ccc",
     },
   },
   variants: {

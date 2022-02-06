@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load  custom_tags %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {% trans 'Course' %}
+{% endblock title %}
+
+{% block content %}
+    <h1 class="text-4xl text-center mt-10 text-rose md:text-5xl">{{ course.name }}</h1>
+    <div class="mt-2 text-xl text-center">
+        <p>
+            {% if course.formation.count > 0 %}
+                <span>{% trans "It's part of the formations" %}:</span>
+                {% for formation in course.formation.all %}
+                    <a href="{% link_to_formation_section 'formations' formation.pk %}"
+                       class="hover:underline hover:text-rose">
+                        {{ formation.name }}
+                    </a>
+                    &nbsp;
+                {% endfor %}
+            {% endif %}
+        </p>
+        <p>
+            <span>{% trans 'Institution' %}: {{ course.institution.name }}</span>
+        </p>
+    </div>
+    <div class="grid grid-cols-1 my-10 text-silver">
+        <div class="bg-tuna">
+            <div class="py-2 px-7 m-2">
+                <h2 class="text-2xl text-white">{% trans 'Description' %}</h2>
+                <div>{{ course.description|linebreaks }}</div>
+
+                <h2 class="text-2xl mt-10 text-white">{% trans 'Curriculum Map' %}</h2>
+                <p class="text-silver">{{ course.curriculum_map|linebreaks }}</p>
+
+                <div class="pt-5 md:flex md:justify-between">
+                    <div class="text-xl">
+                        <p>
+                            {% trans 'Start date' %}:&nbsp;
+                            <span class="text-amber">{{ course.start_date }}</span>
+                        </p>
+                        <p>
+                            {% trans 'End date' %}:&nbsp;
+                            <span class="text-amber">{{ course.end_date }}</span>
+                        </p>
+                    </div>
+                    <div class="mt-1 text-justify text-xl md:mt-0">
+                        <p>
+                            {% trans 'Workload' %}:&nbsp;
+                            {{ course.workload }}
+                        </p>
+                        <p>
+                            {% trans 'Categorys' %}:&nbsp;
+                            {% for category in course.categories.all %}
+                                <a href="#" class="hover:underline hover:text-rose">{{ category.name }}</a>
+                                &nbsp;
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
