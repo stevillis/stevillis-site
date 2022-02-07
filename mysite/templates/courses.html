@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block title %}
+    {% trans 'Courses' %}
+{% endblock title %}
+
+{% block content %}
+    <h1 class="text-4xl text-center mt-10 text-rose md:text-7xl">{% trans 'Courses' %}</h1>
+    <div class="min-h-screen mt-10">
+        <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+            {% for course in courses %}
+                <div class="cursor-pointer rounded-md shadow-md shadow-gray-200 bg-tuna hover:shadow-2xl hover:bg-emperor">
+                    <div class="p-4">
+                        <p class="text-amber text-xl font-semibold py-2">
+                                <span>{{ course.name }}<br>
+                                </span>
+                            <span class="text-sm">{{ course.workload }}</span>
+                        </p>
+                        <p class="font-semibold text-base">
+                            {% trans 'Description' %}:<br>
+                        </p>
+                        <p class="font-light text-gray-700 text-justify line-clamp-3">
+                            {{ course.description|default_if_none:''|stringformat:'.600s' }}
+                            ...<br>
+                            <span class="inline-block mt-2">
+                                    <a href="{% url 'course' course.pk %}" class="hover:underline hover:text-amber">
+                                        {% trans 'See more' %}
+                                    </a>
+                                </span>
+                        </p>
+                        <div class="flex flex-wrap mt-4 space-x-4 align-bottom">
+                            <div class="flex flex-col space-y-0">
+                                <p class="font-semibold text-base">
+                                    {% trans 'Categorys' %}:<br>
+                                    {% for category in course.categories.all %}
+                                        <a href="#" class="hover:underline hover:text-amber">{{ category.name }}</a>
+                                        &nbsp;
+                                    {% endfor %}
+                                </p>
+                                <p class="font-semibold text-sm text-springgreen">
+                                    {% trans 'Start date' %}: {{ course.start_date }}
+                                </p>
+                                <p class="font-semibold text-sm text-springgreen">
+                                    {% trans 'End date' %}:
+                                    {% if course.end_date %}
+                                        {{ course.end_date }}
+                                    {% else %}
+                                        {% trans 'Not concluded' %}
+                                    {% endif %}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock content %}

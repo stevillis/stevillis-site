@@ -8,7 +8,7 @@
 
 {% block content %}
     <h1 class="text-4xl text-center mt-10 text-rose md:text-7xl">{% trans 'Formations' %}</h1>
-    <div class="min-h-screen mt-20">
+    <div class="min-h-screen mt-10">
         {% for formation in formations_qs %}
             <div class="text-center" id="formation-{{ formation.pk }}">
                 <p class="text-amber text-4xl font-semibold">
@@ -27,7 +27,7 @@
                     {% endif %}
                 </p>
             </div>
-            <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+            <div class="grid grid-cols-1 p-4 gap-4 select-none mb-32 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
                 {% for course in formation.courses.all %}
                     <div class="w-full cursor-pointer rounded-md shadow-md shadow-gray-200 bg-tuna hover:shadow-2xl hover:bg-emperor">
                         <div class="p-4">

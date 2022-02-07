@@ -38,7 +38,7 @@
                     </li>
                     <li class="px-4">
                         <a href="{% url 'projects' %}" class="hover:text-rose">
-                            {% trans 'Projetos' %}
+                            {% trans 'Projects' %}
                         </a>
                     </li>
                     <li class="px-4">
@@ -47,13 +47,13 @@
                         </a>
                     </li>
                     <li class="px-4">
-                        <a href="#" class="hover:text-rose">
-                            {% trans 'Sobre' %}
+                        <a href="{% url 'courses' %}" class="hover:text-rose">
+                            {% trans 'Courses' %}
                         </a>
                     </li>
                     <li class="px-4">
                         <a href="#" class="hover:text-rose">
-                            {% trans 'Contato' %}
+                            {% trans 'About me' %}
                         </a>
                     </li>
                 </ul>
@@ -71,22 +71,22 @@
                 </li>
                 <li>
                     <a href="{% url 'projects' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Projetos' %}
+                        {% trans 'Projects' %}
                     </a>
                 </li>
                 <li>
                     <a href="{% url 'formations' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Formações' %}
+                        {% trans 'Formations' %}
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'courses' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
+                        {% trans 'Courses' %}
                     </a>
                 </li>
                 <li>
                     <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Sobre' %}
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Contato' %}
+                        {% trans 'About me' %}
                     </a>
                 </li>
             </ul>

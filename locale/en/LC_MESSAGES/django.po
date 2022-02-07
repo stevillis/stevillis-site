@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-06 18:10-0400\n"
-"PO-Revision-Date: 2022-02-06 18:10-0400\n"
+"POT-Creation-Date: 2022-02-07 12:56-0400\n"
+"PO-Revision-Date: 2022-02-07 12:57-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -84,6 +84,7 @@ msgstr "End Date"
 #: .\mysite\models.py:50 .\mysite\templates\formations.html:6
 #: .\mysite\templates\formations.html:10
 #: .\stevillis_site\templates\base.html:46
+#: .\stevillis_site\templates\base.html:79
 msgid "Formations"
 msgstr "Formations"
 
@@ -95,11 +96,13 @@ msgstr "Curriculum Map"
 msgid "Course"
 msgstr "Course"
 
-#: .\mysite\models.py:71
+#: .\mysite\models.py:71 .\mysite\templates\courses.html:6
+#: .\mysite\templates\courses.html:10 .\stevillis_site\templates\base.html:51
+#: .\stevillis_site\templates\base.html:84
 msgid "Courses"
 msgstr "Courses"
 
-#: .\mysite\services\course_service.py:13
+#: .\mysite\services\course_service.py:14
 msgid "Course not found!"
 msgstr "Course not found!"
 
@@ -107,13 +110,13 @@ msgstr "Course not found!"
 msgid "It's part of the formations"
 msgstr "It's part of the formations"
 
-#: .\mysite\templates\course.html:41 .\mysite\templates\formations.html:20
-#: .\mysite\templates\formations.html:61
+#: .\mysite\templates\course.html:41 .\mysite\templates\courses.html:20
+#: .\mysite\templates\formations.html:20 .\mysite\templates\formations.html:61
 msgid "Start date"
 msgstr "Start Date"
 
-#: .\mysite\templates\course.html:45 .\mysite\templates\formations.html:22
-#: .\mysite\templates\formations.html:64
+#: .\mysite\templates\course.html:45 .\mysite\templates\courses.html:22
+#: .\mysite\templates\formations.html:22 .\mysite\templates\formations.html:64
 msgid "End date"
 msgstr "End Date"
 
@@ -121,13 +124,14 @@ msgstr "End Date"
 msgid "Categorys"
 msgstr "Categorys"
 
+#: .\mysite\templates\courses.html:26 .\mysite\templates\formations.html:26
+#: .\mysite\templates\formations.html:68
+msgid "Not concluded"
+msgstr "Not concluded"
+
 #: .\mysite\templates\formations.html:18
 msgid "courses"
 msgstr "courses"
-
-#: .\mysite\templates\formations.html:26 .\mysite\templates\formations.html:68
-msgid "Not concluded"
-msgstr "Not concluded"
 
 #: .\mysite\templates\formations.html:47
 msgid "See more"
@@ -141,12 +145,12 @@ msgstr "Site under development"
 msgid "Vídeo de Apresentação - Oficina de Django ministrada por mim"
 msgstr "Presentation Video - Django Workshop presented by me"
 
-#: .\mysite\templates\projects.html:6 .\stevillis_site\templates\base.html:41
-#: .\stevillis_site\templates\base.html:74
+#: .\mysite\templates\projects.html:6
 msgid "Projetos"
 msgstr "Projects"
 
-#: .\mysite\templates\projects.html:10
+#: .\mysite\templates\projects.html:10 .\stevillis_site\templates\base.html:41
+#: .\stevillis_site\templates\base.html:74
 msgid "Projects"
 msgstr "Projects"
 
@@ -191,19 +195,19 @@ msgstr "English"
 msgid "Home"
 msgstr "Home"
 
-#: .\stevillis_site\templates\base.html:51
-#: .\stevillis_site\templates\base.html:84
-msgid "Sobre"
-msgstr "About"
-
 #: .\stevillis_site\templates\base.html:56
 #: .\stevillis_site\templates\base.html:89
-msgid "Contato"
-msgstr "Contact"
+msgid "About me"
+msgstr "About me"
 
-#: .\stevillis_site\templates\base.html:79
-msgid "Formações"
-msgstr "Formations"
+#~ msgid "Sobre"
+#~ msgstr "About"
+
+#~ msgid "Contato"
+#~ msgstr "Contact"
+
+#~ msgid "Formações"
+#~ msgstr "Formations"
 
 #~ msgid "Em desenvolvimento"
 #~ msgstr "Under development"

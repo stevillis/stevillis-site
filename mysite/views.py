@@ -27,3 +27,11 @@ def course(request, pk):
         'course': course_found
     }
     return render(request, 'course.html', context)
+
+
+def courses(request):
+    courses_found = course_service.get_courses()
+    context = {
+        'courses': courses_found
+    }
+    return render(request, 'courses.html', context)
