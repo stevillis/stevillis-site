@@ -22,8 +22,7 @@
                             {% trans 'Description' %}:<br>
                         </p>
                         <p class="font-light text-gray-700 text-justify line-clamp-3">
-                            {{ course.description|default_if_none:''|stringformat:'.600s' }}
-                            ...<br>
+                            {{ course.description|default_if_none:''|stringformat:'.200s' }}...<br>
                             <span class="inline-block mt-2">
                                     <a href="{% url 'course' course.pk %}" class="hover:underline hover:text-amber">
                                         {% trans 'See more' %}
