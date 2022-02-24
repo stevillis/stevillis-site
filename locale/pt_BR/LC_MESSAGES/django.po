@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 12:56-0400\n"
-"PO-Revision-Date: 2022-02-07 12:57-0400\n"
+"POT-Creation-Date: 2022-02-24 14:46-0400\n"
+"PO-Revision-Date: 2022-02-24 14:47-0400\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: pt_BR\n"
@@ -69,7 +69,8 @@ msgid "Workload"
 msgstr "Carga Horária"
 
 #: .\mysite\models.py:43 .\mysite\models.py:60
-#: .\mysite\templates\course.html:32 .\mysite\templates\formations.html:40
+#: .\mysite\templates\course.html:32 .\mysite\templates\courses.html:22
+#: .\mysite\templates\formations.html:48
 msgid "Description"
 msgstr "Descrição"
 
@@ -81,8 +82,8 @@ msgstr "Data de Início"
 msgid "End Date"
 msgstr "Data de Conclusão"
 
-#: .\mysite\models.py:50 .\mysite\templates\formations.html:6
-#: .\mysite\templates\formations.html:10
+#: .\mysite\models.py:50 .\mysite\templates\formations.html:7
+#: .\mysite\templates\formations.html:11
 #: .\stevillis_site\templates\base.html:46
 #: .\stevillis_site\templates\base.html:79
 msgid "Formations"
@@ -110,32 +111,37 @@ msgstr "Curso não encontrado!"
 msgid "It's part of the formations"
 msgstr "Faz parte das formações"
 
-#: .\mysite\templates\course.html:41 .\mysite\templates\courses.html:20
-#: .\mysite\templates\formations.html:20 .\mysite\templates\formations.html:61
+#: .\mysite\templates\course.html:41 .\mysite\templates\courses.html:42
+#: .\mysite\templates\formations.html:28 .\mysite\templates\formations.html:68
 msgid "Start date"
 msgstr "Data de Início"
 
-#: .\mysite\templates\course.html:45 .\mysite\templates\courses.html:22
-#: .\mysite\templates\formations.html:22 .\mysite\templates\formations.html:64
+#: .\mysite\templates\course.html:45 .\mysite\templates\courses.html:45
+#: .\mysite\templates\formations.html:30 .\mysite\templates\formations.html:71
 msgid "End date"
 msgstr "Data de Conclusão"
 
-#: .\mysite\templates\course.html:55 .\mysite\templates\formations.html:54
+#: .\mysite\templates\course.html:55 .\mysite\templates\courses.html:35
+#: .\mysite\templates\formations.html:61
 msgid "Categorys"
 msgstr "Categorias"
 
-#: .\mysite\templates\courses.html:26 .\mysite\templates\formations.html:26
-#: .\mysite\templates\formations.html:68
+#: .\mysite\templates\courses.html:19 .\mysite\templates\formations.html:25
+msgid "hours"
+msgstr "horas"
+
+#: .\mysite\templates\courses.html:28 .\mysite\templates\formations.html:54
+msgid "See more"
+msgstr "Ver mais"
+
+#: .\mysite\templates\courses.html:49 .\mysite\templates\formations.html:34
+#: .\mysite\templates\formations.html:75
 msgid "Not concluded"
 msgstr "Não concluído"
 
-#: .\mysite\templates\formations.html:18
+#: .\mysite\templates\formations.html:19
 msgid "courses"
 msgstr "cursos"
-
-#: .\mysite\templates\formations.html:47
-msgid "See more"
-msgstr "Ver mais"
 
 #: .\mysite\templates\index.html:11
 msgid "Site em desenvolvimento"

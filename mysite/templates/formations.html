@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load custom_tags %}
 {% load i18n %}
 {% load static %}
 
@@ -15,7 +16,14 @@
                     {{ formation }} - {{ formation.courses.first.institution.name }}
                 </p>
                 <p class="text-amber text-center text-2xl font-semibold">
-                    {{ formation.courses.count }} {% trans 'courses' %} - {{ formation.workload }}<br>
+                    {{ formation.courses.count }} {% trans 'courses' %} -
+                    {% if formation.workload %}
+                        {{ formation.workload }}
+                    {% else %}
+                        {% calculate_formation_workload formation.pk %}
+                    {% endif %}
+                    {% trans 'hours' %}
+                    <br>
                 </p>
                 <p class="text-sm text-springgreen">{% trans 'Start date' %}: {{ formation.start_date }}</p>
                 <p class="text-sm text-springgreen">
@@ -34,7 +42,7 @@
                             <p class="text-amber text-xl font-semibold py-2">
                                 <span>{{ course.name }}<br>
                                 </span>
-                                <span class="text-sm">{{ course.workload }}</span>
+                                <span class="text-sm">{{ course.workload }} {% trans 'hours' %}</span>
                             </p>
                             <p class="font-semibold text-base">
                                 {% trans 'Description' %}:<br>

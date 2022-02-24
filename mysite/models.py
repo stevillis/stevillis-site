@@ -39,7 +39,7 @@ class Institution(BaseModel):
 class Formation(BaseModel):
     id_formation = models.AutoField(_('Formation ID'), primary_key=True)
     name = models.CharField(_('Name'), max_length=100)
-    workload = models.CharField(_('Workload'), max_length=20)
+    workload = models.FloatField(_('Workload'), null=True, blank=True)
     description = models.TextField(_('Description'), null=True, blank=True)
     start_date = models.DateField(_('Start Date'))
     end_date = models.DateField(_('End Date'), null=True, blank=True)
@@ -56,7 +56,7 @@ class Formation(BaseModel):
 
 class Course(BaseModel):
     name = models.CharField(_('Name'), max_length=60)
-    workload = models.CharField(_('Workload'), max_length=20)
+    workload = models.FloatField(_('Workload'))
     description = models.TextField(_('Description'), null=True, blank=True)
     curriculum_map = models.TextField(_('Curriculum Map'), null=True, blank=True)
     start_date = models.DateField(_('Start Date'))
