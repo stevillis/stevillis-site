@@ -15,4 +15,4 @@ def get_course(pk: int) -> Tuple[Course, Http404]:
 
 
 def get_courses() -> QuerySet:
-    return Course.objects.all().order_by('-end_date')
+    return Course.objects.all().order_by('-end_date', '-start_date')
