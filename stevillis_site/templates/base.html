@@ -36,11 +36,13 @@
                             {% trans 'Home' %}
                         </a>
                     </li>
+                    {% comment %}
                     <li class="px-4">
                         <a href="{% url 'projects' %}" class="hover:text-rose">
                             {% trans 'Projects' %}
                         </a>
                     </li>
+                    {% endcomment %}
                     <li class="px-4">
                         <a href="{% url 'formations' %}" class="hover:text-rose">
                             {% trans 'Formations' %}
@@ -69,11 +71,13 @@
                         {% trans 'Home' %}
                     </a>
                 </li>
+                {% comment %}
                 <li>
                     <a href="{% url 'projects' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
                         {% trans 'Projects' %}
                     </a>
                 </li>
+                {% endcomment %}
                 <li>
                     <a href="{% url 'formations' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
                         {% trans 'Formations' %}
