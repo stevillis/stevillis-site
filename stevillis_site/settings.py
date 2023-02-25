@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-import dj_database_url
+# Heroku
+# import dj_database_url
 import django_heroku
 from django.utils.translation import ugettext_lazy as _
 
@@ -23,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-sg%rcq19oou=6m1rh-a^y(yt51un3vb*y0(+_l-hmd+5d&hb4f"
+SECRET_KEY = os.getenv("STEVILLIS_SITE_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "stevillis.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "stevillis.herokuapp.com", "web-production-47a80.up.railway.app"]
 
 # Application definition
 
@@ -79,23 +80,23 @@ WSGI_APPLICATION = "stevillis_site.wsgi.application"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'stevillis',
-        'USER': 'postgres',
-        'PASSWORD': '123456',
-        'HOST': 'localhost',
-        'PORT': '5432',
-
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "stevillis",
+        "USER": "postgres",
+        "PASSWORD": "123456",
+        "HOST": "localhost",
+        "PORT": "5432",
     },
-    'sqlite': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "sqlite": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+    },
 }
 
-db_from_env = dj_database_url.config()
-DATABASES['default'].update(db_from_env)
+# Heroku
+# db_from_env = dj_database_url.config()
+# DATABASES["default"].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -138,8 +139,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+STATIC_FILE_DIRS = [os.path.join(BASE_DIR, "static")]
 STATIC_URL = "/static/"
 STATIC_ROOT = (os.path.join(BASE_DIR, "staticfiles"),)
+
 
 # MEDIA_URL = "/media/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
