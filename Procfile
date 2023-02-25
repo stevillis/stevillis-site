@@ -1,1 +1,1 @@
-web: gunicorn stevillis_site.wsgi --log-file -
+web: gunicorn stevillis_site.wsgi
