@@ -85,15 +85,27 @@ WSGI_APPLICATION = "stevillis_site.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
+if DEBUG:
+    default_database = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "stevillis",
         "USER": "postgres",
         "PASSWORD": "123456",
         "HOST": "localhost",
         "PORT": "5432",
-    },
+    }
+else:
+    default_database = {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": os.getenv("PGDATABASE"),
+        "USER": os.getenv("PGUSER"),
+        "PASSWORD": os.getenv("PGPASSWORD"),
+        "HOST": os.getenv("PGHOST"),
+        "PORT": os.getenv("PGPORT"),
+    }
+
+DATABASES = {
+    "default": default_database,
     "sqlite": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
