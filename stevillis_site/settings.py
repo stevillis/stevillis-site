@@ -29,13 +29,7 @@ SECRET_KEY = os.getenv("STEVILLIS_SITE_SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    "stevillis.herokuapp.com",
-    "web-production-47a80.up.railway.app",
-    "stevillis.up.railway.app",
-]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
