@@ -28,19 +28,10 @@
     }
   },
   "python.defaultInterpreterPath": "venv\\Scripts\\python.exe",
-  "python.formatting.provider": "black",
-  "python.formatting.blackArgs": [
-    "--line-length",
-    "120",
-  ],
-  "python.linting.enabled": true,
-  "python.linting.flake8CategorySeverity.E": "Information",
-  "python.linting.flake8Enabled": true,
-  "python.linting.pylintEnabled": true,
   "[python]": {
     "editor.codeActionsOnSave": {
-      "source.organizeImports": true,
-      "source.fixAll": false
+      "source.organizeImports": "explicit",
+      "source.fixAll": "never"
     },
     "editor.defaultFormatter": "ms-python.python",
     "editor.formatOnPaste": true,
@@ -63,7 +54,7 @@
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
+      "source.fixAll.eslint": "explicit"
     },
     "editor.formatOnSave": true,
     "editor.rulers": [
