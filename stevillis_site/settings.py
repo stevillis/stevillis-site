@@ -26,6 +26,7 @@ SECRET_KEY = os.getenv("STEVILLIS_SITE_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("STEVILLIS_SITE_DEBUG", False)
+RUNNING_LOCAL = os.getenv("STEVILLIS_SITE_RUNNING_LOCAL", False)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = "stevillis_site.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-if DEBUG:
+if DEBUG and RUNNING_LOCAL:
     default_database = {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "stevillis",
