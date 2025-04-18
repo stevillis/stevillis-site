@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("STEVILLIS_SITE_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.getenv("STEVILLIS_SITE_DEBUG", False)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -97,7 +97,6 @@ else:
     }
 
 DATABASES = {"default": default_database}
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
