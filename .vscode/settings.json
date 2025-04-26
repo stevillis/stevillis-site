@@ -20,7 +20,7 @@
     "django-html": "html"
   },
   "[django-html]": {
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "monosans.djlint",
     "editor.quickSuggestions": {
       "other": true,
       "comments": true,

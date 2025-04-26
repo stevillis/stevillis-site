@@ -1,131 +1,125 @@
 {% load i18n %}
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="{{ language }}">
-
-<head>
-    <meta charset="UTF-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>{% block title %}{% endblock %}</title>
-
-    <link rel="shortcut icon" href="{% static 'mysite/img/logo.ico' %}" type="image/x-icon">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
-          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link rel="stylesheet" type="text/css" href="https://stevillis.github.io/style/storage/my-site.css">
-</head>
-
-<body class="bg-shark">
-<!-- Navbar -->
-<header class="sticky border-b-2 top-0 z-50 bg-shark border-rose">
-    <div class="header-content flex justify-between items-center py-5 mx-4 md:px-20">
-        <div>
-            <a href="{% url 'index' %}">
-                <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
-            </a>
-        </div>
-        <i class="hamburger-menu fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
-        <div class="items-end flex-1 text-white font-bold hidden md:flex">
-            <nav class="flex-1">
-                <ul class="flex justify-end flex-1">
-                    <li class="px-4">
-                        <a href="{% url 'index' %}" class="hover:text-rose">
-                            {% trans 'Home' %}
-                        </a>
-                    </li>
-                    {% comment %}
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            {% block title %}{% endblock %}
+        </title>
+        <link rel="shortcut icon"
+              href="{% static 'mysite/img/logo.ico' %}"
+              type="image/x-icon">
+        <link rel="stylesheet"
+              href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+              integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+              crossorigin="anonymous"
+              referrerpolicy="no-referrer" />
+        <link rel="stylesheet"
+              type="text/css"
+              href="https://stevillis.github.io/style/storage/my-site.css">
+    </head>
+    <body class="bg-shark">
+        <!-- Navbar -->
+        <header class="sticky border-b-2 top-0 z-50 bg-shark border-rose">
+            <div class="header-content flex justify-between items-center py-5 mx-4 md:px-20">
+                <div>
+                    <a href="{% url 'index' %}">
+                        <img src="{% static 'mysite/img/logo.png' %}" alt="Logo" class="w-20">
+                    </a>
+                </div>
+                <i class="hamburger-menu fas fa-bars text-white text-3xl hover:text-rose md:hidden"></i>
+                <div class="items-end flex-1 text-white font-bold hidden md:flex">
+                    <nav class="flex-1">
+                        <ul class="flex justify-end flex-1">
+                            <li class="px-4">
+                                <a href="{% url 'index' %}" class="hover:text-rose">{% trans 'Home' %}</a>
+                            </li>
+                            {% comment %}
                     <li class="px-4">
                         <a href="{% url 'projects' %}" class="hover:text-rose">
                             {% trans 'Projects' %}
                         </a>
                     </li>
-                    {% endcomment %}
-                    <li class="px-4">
-                        <a href="{% url 'formations' %}" class="hover:text-rose">
-                            {% trans 'Formations' %}
-                        </a>
-                    </li>
-                    <li class="px-4">
-                        <a href="{% url 'courses' %}" class="hover:text-rose">
-                            {% trans 'Courses' %}
-                        </a>
-                    </li>
+                            {% endcomment %}
+                            <li class="px-4">
+                                <a href="{% url 'formations' %}" class="hover:text-rose">{% trans 'Formations' %}</a>
+                            </li>
+                            <li class="px-4">
+                                <a href="{% url 'courses' %}" class="hover:text-rose">{% trans 'Courses' %}</a>
+                            </li>
+                            {% comment %}
                     <li class="px-4">
                         <a href="#" class="hover:text-rose">
                             {% trans 'About me' %}
                         </a>
                     </li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- Mobile menu -->
-    <div class="hidden mobile-menu absolute right-0 w-screen opacity-95 bg-tuna px-4 md:px-20 md:hidden">
-        <nav>
-            <ul class="text-white">
-                <li>
-                    <a href="{% url 'index' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Home' %}
-                    </a>
-                </li>
-                {% comment %}
+                            {% endcomment %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div class="hidden mobile-menu absolute right-0 w-screen opacity-95 bg-tuna px-4 md:px-20 md:hidden">
+                <nav>
+                    <ul class="text-white">
+                        <li>
+                            <a href="{% url 'index' %}"
+                               class="block text-sm px-4 py-4 font-semibold hover:bg-rose">{% trans 'Home' %}</a>
+                        </li>
+                        {% comment %}
                 <li>
                     <a href="{% url 'projects' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
                         {% trans 'Projects' %}
                     </a>
                 </li>
-                {% endcomment %}
-                <li>
-                    <a href="{% url 'formations' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Formations' %}
-                    </a>
-                </li>
-                <li>
-                    <a href="{% url 'courses' %}" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
-                        {% trans 'Courses' %}
-                    </a>
-                </li>
+                        {% endcomment %}
+                        <li>
+                            <a href="{% url 'formations' %}"
+                               class="block text-sm px-4 py-4 font-semibold hover:bg-rose">{% trans 'Formations' %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'courses' %}"
+                               class="block text-sm px-4 py-4 font-semibold hover:bg-rose">{% trans 'Courses' %}</a>
+                        </li>
+                        {% comment %}
                 <li>
                     <a href="#" class="block text-sm px-4 py-4 font-semibold hover:bg-rose">
                         {% trans 'About me' %}
                     </a>
                 </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<!-- Content -->
-<main class="mx-4 text-white md:px-20">
-    {% block content %}
-    {% endblock %}
-</main>
-
-<!-- Footer -->
-<footer class="mx-4 py-5 bg-shark md:px-20">
-    <hr class="text-emperor">
-    <div class="flex justify-center items-center text-white">
-        <ul class="flex justify-center">
-            <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
-                <a href="https://www.linkedin.com/in/stevillis/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </li>
-            <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
-                <a href="https://github.com/stevillis" target="_blank"><i class="fab fa-github"></i></a>
-            </li>
-        </ul>
-    </div>
-    <p class="text-gray-400 text-sm text-white text-center">&copy; {% now 'Y' %} Stévillis Sousa</p>
-</footer>
-
-<!-- Scripts -->
-<script src="{% static 'mysite/js/menu.js' %}"></script>
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-80TLJZXD5Y"></script>
-<script>
+                        {% endcomment %}
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- Content -->
+        <main class="mx-4 text-white md:px-20">
+            {% block content %}
+            {% endblock %}
+        </main>
+        <!-- Footer -->
+        <footer class="mx-4 py-5 bg-shark md:px-20">
+            <hr class="text-emperor">
+            <div class="flex justify-center items-center text-white">
+                <ul class="flex justify-center">
+                    <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
+                        <a href="https://www.linkedin.com/in/stevillis/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li class="flex items-center justify-evenly text-2xl h-12 rounded-full hover:text-rose mx-2">
+                        <a href="https://github.com/stevillis" target="_blank"><i class="fab fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <p class="text-gray-400 text-sm text-white text-center">&copy; {% now 'Y' %} Stévillis Sousa</p>
+        </footer>
+        <!-- Scripts -->
+        <script src="{% static 'mysite/js/menu.js' %}"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-80TLJZXD5Y"></script>
+        <script>
     window.dataLayer = window.dataLayer || [];
 
     function gtag() {
@@ -135,7 +129,6 @@
     gtag('js', new Date());
 
     gtag('config', 'G-80TLJZXD5Y');
-</script>
-</body>
-
+        </script>
+    </body>
 </html>
