@@ -89,13 +89,14 @@
                                     {% endif %}
                                 </div>
                                 <div>
-                                    <div class="font-bold text-white text-lg group-hover:text-pink-400 transition-colors">{{ activity.description }}</div>
+                                    <div class="font-bold text-white text-lg hover:underline hover:text-rose transition-colors">
+                                        {{ activity.description }}
+                                    </div>
                                     <div class="text-sm text-gray-400 flex items-center gap-2">
-                                        <span class="px-2 py-0.5 rounded text-xs font-semibold {% if activity.type == 'Curso' %}bg-blue-900 text-blue-200{% else %}bg-yellow-900 text-yellow-200{% endif %}">{{ activity.type }}</span>
+                                        <span class="px-2 py-0.5 rounded text-xs font-semibold bg-blue-900 text-blue-200">Concluído em: {{ activity.end_date }}</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-gray-500 text-sm font-mono whitespace-nowrap">{{ activity.date }}</div>
                         </div>
                     </a>
                 {% empty %}

@@ -31,35 +31,24 @@ def get_dashboard_stats() -> Dict[str, Any]:
 
 def get_recent_activity(limit: int = 5) -> List[Dict[str, Any]]:
     """
-    Simulates recent activity by fetching the most recently updated courses
-    and formations.
-    Returns a unified list sorted by date.
+    Fetches the most recently completed courses.
+    Returns a list sorted by end date.
     """
     activities = []
 
-    recent_courses = Course.objects.order_by("-updated_at")[:limit]
+    recent_courses = Course.objects.filter(end_date__isnull=False).order_by(
+        "-end_date"
+    )[:limit]
+
     for course in recent_courses:
         activities.append(
             {
                 "type": "Curso",
                 "id": course.pk,
                 "description": f"{course.name} ({course.institution.name if course.institution else 'N/A'})",
-                "date": course.updated_at.strftime("%d/%m/%Y"),
-                "timestamp": course.updated_at,
+                "end_date": course.end_date.strftime("%d/%m/%Y"),
+                "timestamp": course.end_date,
             }
         )
 
-    recent_formations = Formation.objects.order_by("-updated_at")[:limit]
-    for formation in recent_formations:
-        activities.append(
-            {
-                "type": "Formação",
-                "id": formation.pk,
-                "description": formation.name,
-                "date": formation.updated_at.strftime("%d/%m/%Y"),
-                "timestamp": formation.updated_at,
-            }
-        )
-
-    activities.sort(key=lambda x: x["timestamp"], reverse=True)
-    return activities[:limit]
+    return activities
