@@ -27,13 +27,13 @@
       "strings": true
     }
   },
-  "python.defaultInterpreterPath": "venv\\Scripts\\python.exe",
+  "python.defaultInterpreterPath": "C\\venvs\\venv_stevillis_site\\Scripts\\python.exe",
   "[python]": {
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit",
       "source.fixAll": "never"
     },
-    "editor.defaultFormatter": "ms-python.python",
+    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.rulers": [
