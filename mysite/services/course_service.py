@@ -11,8 +11,10 @@ def get_course(pk: int) -> Tuple[Course, Http404]:
     try:
         return Course.objects.get(pk=pk)
     except Course.DoesNotExist:
-        raise Http404(_('Course not found!'))
+        raise Http404(_("Course not found!"))
 
 
 def get_courses() -> QuerySet:
-    return Course.objects.all().order_by('-end_date', '-start_date')
+    return Course.objects.filter(end_date__isnull=False).order_by(
+        "-end_date", "-start_date"
+    )
