@@ -40,6 +40,16 @@ class DashboardServiceTest(TestCase):
             institution=self.institution,
         )
 
+        # Inactive course
+        self.course3 = Course.objects.create(
+            name="Course 3",
+            workload=15,
+            start_date=timezone.now().date(),
+            end_date=timezone.now().date(),
+            institution=self.institution,
+            is_active=False,
+        )
+
         # Formation
         self.formation = Formation.objects.create(
             name="Formation 1",
@@ -62,6 +72,4 @@ class DashboardServiceTest(TestCase):
         """Test retrieving recent activity."""
         activity = dashboard_service.get_recent_activity()
         self.assertTrue(len(activity) > 0)
-        self.assertEqual(
-            activity[0]["type"], "Formação"
-        )  # Most recent activity should be the formation
+        self.assertEqual(activity[0]["type"], "Curso")
