@@ -1,3 +1,5 @@
+""" "Service functions for dashboard statistics and recent activities."""
+
 from typing import Any, Dict, List
 
 from django.db.models import Sum
@@ -9,16 +11,22 @@ def get_dashboard_stats() -> Dict[str, Any]:
     """
     Calculates and returns statistics for the dashboard.
     """
-    total_courses = Course.objects.count()
+    total_courses = Course.objects.filter(is_active=True).count()
     total_formations = Formation.objects.count()
 
     # Calculate total hours (sum of workload from all courses)
-    total_hours_data = Course.objects.aggregate(total_hours=Sum("workload"))
+    total_hours_data = Course.objects.filter(is_active=True).aggregate(
+        total_hours=Sum("workload")
+    )
     total_hours = total_hours_data["total_hours"] or 0
 
     # Course progress
-    courses_completed = Course.objects.filter(end_date__isnull=False).count()
-    courses_in_progress = Course.objects.filter(end_date__isnull=True).count()
+    courses_completed = Course.objects.filter(
+        end_date__isnull=False, is_active=True
+    ).count()
+    courses_in_progress = Course.objects.filter(
+        end_date__isnull=True, is_active=True
+    ).count()
 
     return {
         "total_courses": total_courses,
@@ -36,9 +44,9 @@ def get_recent_activity(limit: int = 5) -> List[Dict[str, Any]]:
     """
     activities = []
 
-    recent_courses = Course.objects.filter(end_date__isnull=False).order_by(
-        "-end_date"
-    )[:limit]
+    recent_courses = Course.objects.filter(
+        end_date__isnull=False, is_active=True
+    ).order_by("-end_date")[:limit]
 
     for course in recent_courses:
         activities.append(
