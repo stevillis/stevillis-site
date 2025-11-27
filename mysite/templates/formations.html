@@ -95,5 +95,53 @@
                 </div>
             </div>
         {% endfor %}
+        <!-- Pagination Controls -->
+        {% if formations_qs.has_other_pages %}
+            <div class="flex justify-center items-center gap-2 my-12 flex-wrap max-w-6xl mx-auto px-4">
+                {% if formations_qs.has_previous %}
+                    <a href="?page=1"
+                       class="px-3 py-2 bg-rose text-white rounded-lg hover:bg-rose/80 transition-colors">
+                        {% trans "Primeira" %}
+                    </a>
+                    <a href="?page={{ formations_qs.previous_page_number }}"
+                       class="px-3 py-2 bg-rose text-white rounded-lg hover:bg-rose/80 transition-colors">
+                        &#171; {% trans "Anterior" %}
+                    </a>
+                {% else %}
+                    <span class="px-3 py-2 bg-emperor text-silver rounded-lg opacity-50 cursor-not-allowed">{% trans "Primeira" %}</span>
+                    <span class="px-3 py-2 bg-emperor text-silver rounded-lg opacity-50 cursor-not-allowed">
+                        &#171; {% trans "Anterior" %}
+                    </span>
+                {% endif %}
+                <!-- Page numbers -->
+                <div class="flex gap-1">
+                    {% for num in formations_qs.paginator.page_range %}
+                        {% if formations_qs.number == num %}
+                            <span class="px-3 py-2 bg-amber text-tuna font-semibold rounded-lg">{{ num }}</span>
+                        {% elif num > formations_qs.number|add:"-3" and num < formations_qs.number|add:"3" %}
+                            <a href="?page={{ num }}"
+                               class="px-3 py-2 bg-emperor text-silver rounded-lg hover:bg-rose hover:text-white transition-colors">
+                                {{ num }}
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% if formations_qs.has_next %}
+                    <a href="?page={{ formations_qs.next_page_number }}"
+                       class="px-3 py-2 bg-rose text-white rounded-lg hover:bg-rose/80 transition-colors">
+                        {% trans "Próxima" %} &#187;
+                    </a>
+                    <a href="?page={{ formations_qs.paginator.num_pages }}"
+                       class="px-3 py-2 bg-rose text-white rounded-lg hover:bg-rose/80 transition-colors">
+                        {% trans "Última" %}
+                    </a>
+                {% else %}
+                    <span class="px-3 py-2 bg-emperor text-silver rounded-lg opacity-50 cursor-not-allowed">
+                        {% trans "Próxima" %} &#187;
+                    </span>
+                    <span class="px-3 py-2 bg-emperor text-silver rounded-lg opacity-50 cursor-not-allowed">{% trans "Última" %}</span>
+                {% endif %}
+            </div>
+        {% endif %}
     </div>
 {% endblock content %}

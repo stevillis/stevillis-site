@@ -1,3 +1,4 @@
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.shortcuts import render
 
 from mysite.services import course_service, dashboard_service, formation_services
@@ -20,7 +21,16 @@ def projects(request):
 
 def formations(request):
     """Render the formations page with all formations."""
-    formations_qs = formation_services.get_all_formations()
+    formations_list = formation_services.get_all_formations()
+    paginator = Paginator(formations_list, 5)
+    page = request.GET.get("page")
+    try:
+        formations_qs = paginator.page(page)
+    except PageNotAnInteger:
+        formations_qs = paginator.page(1)
+    except EmptyPage:
+        formations_qs = paginator.page(paginator.num_pages)
+
     context = {
         "formations_qs": formations_qs,
     }
@@ -36,6 +46,15 @@ def course(request, pk):
 
 def courses(request):
     """Render the courses page with all courses."""
-    courses_found = course_service.get_courses()
+    courses_list = course_service.get_courses()
+    paginator = Paginator(courses_list, 12)
+    page = request.GET.get("page")
+    try:
+        courses_found = paginator.page(page)
+    except PageNotAnInteger:
+        courses_found = paginator.page(1)
+    except EmptyPage:
+        courses_found = paginator.page(paginator.num_pages)
+
     context = {"courses": courses_found}
     return render(request, "courses.html", context)
