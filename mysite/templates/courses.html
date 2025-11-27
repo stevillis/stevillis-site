@@ -1,56 +1,56 @@
 {% extends 'base.html' %}
 {% load i18n %}
 {% load static %}
-
 {% block title %}
     {% trans 'Courses' %}
 {% endblock title %}
-
 {% block content %}
-    <h1 class="text-4xl text-center mt-10 text-rose md:text-7xl">{% trans 'Courses' %}</h1>
-    <div class="min-h-screen mt-10">
-        <div class="grid grid-cols-1 p-4 gap-4 select-none mb-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+    <h1 class="text-4xl text-center mt-10 mb-2 text-rose md:text-7xl">{% trans 'Cursos' %}</h1>
+    <p class="text-center text-silver mb-10">{% trans 'Explore todos os meus cursos e minha jornada de aprendizado' %}</p>
+    <div class="min-h-screen">
+        <div class="grid grid-cols-1 gap-6 select-none mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 max-w-6xl mx-auto px-4">
             {% for course in courses %}
-                <div class="cursor-pointer rounded-md shadow-md shadow-gray-200 bg-tuna hover:shadow-2xl hover:bg-emperor">
-                    <div class="p-4">
-                        <p class="text-amber text-xl font-semibold py-2">
-                                <span>{{ course.name }}<br>
-                                </span>
-                            <span class="text-sm">{{ course.workload }} {% trans 'hours' %}</span>
-                        </p>
-                        <p class="font-semibold text-base">
-                            {% trans 'Description' %}:<br>
-                        </p>
-                        <p class="font-light text-gray-700 text-justify line-clamp-3">
-                            {{ course.description|default_if_none:''|stringformat:'.200s' }}...<br>
-                            <span class="inline-block mt-2">
-                                    <a href="{% url 'course' course.pk %}" class="hover:underline hover:text-amber">
-                                        {% trans 'See more' %}
-                                    </a>
-                                </span>
-                        </p>
-                        <div class="flex flex-wrap mt-4 space-x-4 align-bottom">
-                            <div class="flex flex-col space-y-0">
-                                <p class="font-semibold text-base">
-                                    {% trans 'Categorys' %}:<br>
-                                    {% for category in course.categories.all %}
-                                        <a href="#" class="hover:underline hover:text-amber">{{ category.name }}</a>
-                                        &nbsp;
-                                    {% endfor %}
-                                </p>
-                                <p class="font-semibold text-sm text-springgreen">
-                                    {% trans 'Start date' %}: {{ course.start_date }}
-                                </p>
-                                <p class="font-semibold text-sm text-springgreen">
-                                    {% trans 'End date' %}:
-                                    {% if course.end_date %}
-                                        {{ course.end_date }}
-                                    {% else %}
-                                        {% trans 'Not concluded' %}
-                                    {% endif %}
-                                </p>
+                <div class="cursor-pointer rounded-xl bg-tuna border-2 border-emperor hover:border-rose transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-rose/30 transform hover:-translate-y-1 group">
+                    <div class="p-6 h-full flex flex-col">
+                        <div class="mb-4">
+                            <p class="text-rose text-lg font-bold line-clamp-2 group-hover:text-amber transition-colors">{{ course.name }}</p>
+                            <div class="flex items-center gap-2 mt-2">
+                                <span class="inline-block px-3 py-1 bg-rose/20 text-rose text-xs font-semibold rounded-full">{{ course.workload }} {% trans 'horas' %}</span>
                             </div>
                         </div>
+                        <p class="text-silver text-justify text-sm line-clamp-4 mb-4 flex-grow">
+                            {{ course.description|default_if_none:''|stringformat:'.150s' }}...
+                        </p>
+                        <div class="space-y-3 text-sm mb-4">
+                            <div>
+                                <p class="text-silver font-semibold mb-1">{% trans 'Categorias' %}</p>
+                                <div class="flex flex-wrap gap-1">
+                                    {% for category in course.categories.all %}
+                                        <span class="px-2 py-1 bg-amber/20 text-amber text-xs rounded">{{ category.name }}</span>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div>
+                                    <p class="text-silver opacity-75">{% trans 'Início' %}</p>
+                                    <p class="text-springgreen font-semibold">{{ course.start_date }}</p>
+                                </div>
+                                <div>
+                                    <p class="text-silver opacity-75">{% trans 'Fim' %}</p>
+                                    <p class="text-springgreen font-semibold">
+                                        {% if course.end_date %}
+                                            {{ course.end_date }}
+                                        {% else %}
+                                            {% trans 'Em progresso' %}
+                                        {% endif %}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="{% url 'course' course.pk %}"
+                           class="inline-block px-4 py-2 bg-rose text-white font-semibold rounded-lg hover:bg-rose/80 transition-colors text-center w-full">
+                            {% trans 'Ver Detalhes' %}
+                        </a>
                     </div>
                 </div>
             {% endfor %}
