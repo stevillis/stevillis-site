@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,7 +83,7 @@ if DEBUG and RUNNING_LOCAL:
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "stevillis",
         "USER": "postgres",
-        "PASSWORD": "123456",
+        "PASSWORD": "postgres",
         "HOST": "localhost",
         "PORT": "5432",
     }
