@@ -8,11 +8,12 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 # Install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get upgrade -y --no-install-recommends && apt-get install -y --no-install-recommends \
     build-essential \
     libpq-dev \
     curl \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip install --no-cache-dir --upgrade pip setuptools wheel msgpack
 
 # Install uv binary
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
@@ -39,10 +40,11 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 WORKDIR /app
 
 # Install runtime system dependencies only
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get upgrade -y --no-install-recommends && apt-get install -y --no-install-recommends \
     libpq5 \
     curl \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && python -m pip install --no-cache-dir --upgrade pip setuptools wheel msgpack
 
 # Copy pre-built environment and app code from builder
 COPY --from=builder /app /app

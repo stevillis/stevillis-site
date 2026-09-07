@@ -1,6 +1,6 @@
 # Database Operations & Maintenance Guide
 
-This guide provides instructions for backing up (exporting), restoring (importing), and synchronizing the PostgreSQL database for the Stevillis Learning project.
+This guide provides instructions for backing up (exporting), restoring (importing), and synchronizing the PostgreSQL database for the Stévillis Learning project.
 
 ---
 

@@ -1,4 +1,4 @@
-# Deployment Guide - Stévillis Learning Hub
+﻿# Deployment Guide - Stévillis Learning Hub
 
 Este guia descreve os processos para implantação da aplicação em ambiente de produção (Docker / VPS / Railway / PaaS) utilizando o banco de dados PostgreSQL.
 
@@ -38,33 +38,47 @@ DATABASE_URL=postgresql://postgres.YOUR_REF:YOUR_PASSWORD@aws-0-sa-east-1.pooler
 
 ---
 
-## 2. Build da Imagem Docker e Envio para o Docker Hub
+## 2. Build da Imagem Docker, Segurança (CVEs) e Envio para o Docker Hub
 
-O `Dockerfile` do projeto realiza o build multi-stage: instala as dependências via `uv`, compila o Tailwind CSS (`tailwind build`) e coleta os estáticos (`collectstatic --no-input`) automaticamente durante a etapa de build da imagem.
+O `Dockerfile` do projeto realiza o build multi-stage: instala as dependências via `uv`, compila o Tailwind CSS (`tailwind build`), coleta os estáticos (`collectstatic --no-input`) e aplica atualizações de segurança no sistema operacional e pacotes Python automaticamente durante o build.
 
-### Passo 2.1: Autenticar no Docker Hub (Máquina Local)
+### Passo 2.1: Manutenção de Dependências Python e SO
 
-Se ainda não realizou o login no Docker Hub na sua máquina:
+Para garantir zero vulnerabilidades conhecidas (CVEs) nas bibliotecas e na imagem base:
 
 ```bash
-docker login
-# Informe seu usuário (ex: stevillis) e sua senha/Personal Access Token
+# Atualizar travas de dependências Python para versões corrigidas
+uv lock --upgrade
+
+# Executar os testes automatizados para garantir integridade
+uv run pytest
 ```
 
-### Passo 2.2: Build sem Cache e Push para o Docker Hub
+### Passo 2.2: Build da Imagem Docker e Varredura com Docker Scout
 
-Para garantir que todas as atualizações de código, dependências e compilação do Tailwind CSS sejam incluídas na imagem:
+Construa a imagem forçando a busca pela versão mais recente da imagem base (`--pull`) e execute a auditoria de segurança com o Docker Scout:
 
 ```bash
-# 1. Build da imagem sem cache
-docker compose build --no-cache
+# Fazer o build buscando atualizações da imagem base python:3.12-slim
+docker build --pull -t stevillis/stevillearning:latest .
 
-# (Opcional) Build direto via CLI do Docker indicando a tag:
-# docker build --no-cache -t stevillis/stevillearning:latest .
+# Auditar vulnerabilidades (CVEs) da imagem com o Docker Scout
+docker scout cves stevillis/stevillearning:latest
 
-# 2. Enviar a imagem para o Docker Hub
+# Obter recomendações automáticas de atualização de imagem base
+docker scout recommendations stevillis/stevillearning:latest
+
+# Enviar a imagem corrigida para o Docker Hub
 docker push stevillis/stevillearning:latest
 ```
+
+> [!TIP]
+> **Por que ocorrem CVEs e como são corrigidos?**
+>
+> - **Vulnerabilidades do Sistema Operacional (`deb / debian`)**: O `Dockerfile` inclui `apt-get upgrade -y --no-install-recommends` para atualizar bibliotecas do sistema.
+> - **Vulnerabilidades de Pacotes Python da Imagem Base (`pypi / pip` / `setuptools`)**: O `Dockerfile` inclui `python -m pip install --no-cache-dir --upgrade pip setuptools wheel msgpack` para atualizar ferramentas pré-instaladas da imagem base.
+> - **Recomendações Automáticas**: O comando `docker scout recommendations <imagem>` sugere as melhores tags de imagem base atualizadas.
+> - **Vulnerabilidades Não Corrigíveis (`Fixed version: not fixed`)**: Pacotes do SO com status *not fixed* no repositório do Debian representam vulnerabilidades teóricas sem patch lançado pelo Debian. No painel do Docker Hub, utilize o filtro **Fixable** para visualizar apenas os itens com correção disponível.
 
 ---
 
@@ -84,7 +98,7 @@ docker compose up -d
 
 ---
 
-## 3. Configuração do Nginx e SSL (VPS / Host Linux)
+## 4. Configuração do Nginx e SSL (VPS / Host Linux)
 
 Se estiver implantando em uma VPS própria (ex: Oracle Cloud, DigitalOcean, Hetzner) atrás de um Nginx reverse proxy:
 
@@ -123,7 +137,7 @@ Se estiver implantando em uma VPS própria (ex: Oracle Cloud, DigitalOcean, Hetz
 
 ---
 
-## 4. Migrações e Inicialização em Produção
+## 5. Migrações e Inicialização em Produção
 
 Após subir o container em produção, execute as migrações do banco de dados no container rodando:
 
@@ -137,7 +151,7 @@ docker compose exec web python manage.py createsuperuser
 
 ---
 
-## 5. Resolução de Problemas (Troubleshooting)
+## 6. Resolução de Problemas (Troubleshooting)
 
 ### Migrações Pendentes na Plataforma de Hospedagem (ex: Railway)
 
