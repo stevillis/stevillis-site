@@ -8,20 +8,20 @@
 {% block content %}
     <!-- Hero Section -->
     <section class="relative py-12 md:py-16 text-center max-w-4xl mx-auto">
-        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
-            Gestão de Aprendizado e <span class="text-cyan-400">Trajetória Técnica</span>
+        <h1 class="text-4xl sm:text-5xl md:text-6xl font-black text-cyan-400 tracking-tight mb-6 leading-tight">
+            Learning Hub
         </h1>
-        <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8 text-justify">
-            Registro centralizado dos meus cursos, certificações técnicas e formações acadêmicas. Acompanhe a evolução da minha jornada de aprendizado e evolução técnica.
+        <p class="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+            Registro centralizado dos meus cursos, certificações técnicas e formações acadêmicas. Acompanhe a evolução da minha jornada de aprendizado e especialização contínua.
         </p>
-        <div class="flex flex-wrap items-center justify-center gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <a href="{% url 'courses' %}"
-               class="px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-colors flex items-center gap-2">
+               class="px-5 sm:px-6 py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold text-sm transition-colors flex items-center gap-2">
                 <i class="bi bi-book-half"></i>
                 <span>Ver Cursos</span>
             </a>
             <a href="{% url 'certifications' %}"
-               class="px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-bold text-sm transition-colors flex items-center gap-2">
+               class="px-5 sm:px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 font-bold text-sm transition-colors flex items-center gap-2">
                 <i class="bi bi-patch-check text-emerald-400"></i>
                 <span>Ver Certificações</span>
             </a>

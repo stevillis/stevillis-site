@@ -72,27 +72,37 @@
         <div class="glass-panel p-8 mb-8 space-y-8">
             <!-- Description -->
             <div>
-                <h2 class="text-xl font-bold text-white mb-4">Descrição do Curso</h2>
+                <div class="flex items-center gap-2 mb-4">
+                    <i class="bi bi-card-text text-cyan-400 text-lg"></i>
+                    <h2 class="text-xl font-bold text-white">Descrição do Curso</h2>
+                </div>
                 <div class="text-slate-300 text-base leading-relaxed space-y-4">{{ course.description|linebreaks }}</div>
             </div>
             <!-- Curriculum Map -->
             {% if course.curriculum_map %}
                 <div class="pt-8 border-t border-slate-800">
-                    <h2 class="text-xl font-bold text-white mb-4">Mapa de Currículo</h2>
-                    <div class="text-slate-300 font-mono text-sm leading-relaxed whitespace-pre-wrap bg-slate-950 p-6 rounded-xl border border-slate-800">
-                        {{ course.curriculum_map }}
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="bi bi-diagram-3 text-cyan-400 text-lg"></i>
+                        <h2 class="text-xl font-bold text-white">Mapa de Currículo</h2>
                     </div>
+                    <div class="text-slate-300 text-base leading-relaxed space-y-4">{{ course.curriculum_map|linebreaks }}</div>
                 </div>
             {% endif %}
             <!-- Categories -->
             <div class="pt-8 border-t border-slate-800">
-                <h3 class="text-sm font-mono text-slate-400 uppercase tracking-wider mb-3">Categorias & Tópicos</h3>
+                {% if course.categories.count == 1 %}
+                    <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-3">Categoria</span>
+                {% else %}
+                    <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block mb-3">Categorias</span>
+                {% endif %}
                 <div class="flex flex-wrap gap-2">
                     {% for category in course.categories.all %}
                         <span class="px-3 py-1.5 rounded-lg bg-slate-900 text-cyan-300 border border-slate-800 text-xs font-medium flex items-center gap-1.5">
                             <i class="bi bi-tag-fill text-cyan-500"></i>
                             {{ category.name }}
                         </span>
+                    {% empty %}
+                        <span class="text-slate-500 text-xs font-mono">Nenhuma categoria vinculada.</span>
                     {% endfor %}
                 </div>
             </div>

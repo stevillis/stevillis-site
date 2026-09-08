@@ -61,24 +61,46 @@
                     <!-- Desktop Nav Menu -->
                     <nav class="hidden md:flex items-center space-x-1 lg:space-x-2">
                         <a href="{% url 'index' %}"
-                           class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
+                           class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
                             <i class="bi bi-house text-slate-400"></i>
                             <span>Home</span>
                         </a>
                         <a href="{% url 'formations' %}"
-                           class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
+                           class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
                             <i class="bi bi-mortarboard text-slate-400"></i>
                             <span>Formações</span>
                         </a>
                         <a href="{% url 'courses' %}"
-                           class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
+                           class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
                             <i class="bi bi-book text-slate-400"></i>
                             <span>Cursos</span>
                         </a>
                         <a href="{% url 'certifications' %}"
-                           class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
+                           class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
                             <i class="bi bi-patch-check text-slate-400"></i>
                             <span>Certificações</span>
+                        </a>
+                        <!-- Recruiter / External Portfolio Direct Links -->
+                        <a href="https://stevillis.com.br"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 text-slate-300 hover:text-white hover:bg-slate-800/60">
+                            <i class="bi bi-briefcase"></i>
+                            <span>Portfólio</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/stevillis/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="p-2 rounded-lg text-slate-400 hover:text-cyan-400 hover:bg-slate-800/60 transition-colors"
+                           title="LinkedIn">
+                            <i class="bi bi-linkedin text-sm"></i>
+                        </a>
+                        <a href="https://github.com/stevillis"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800/60 transition-colors"
+                           title="GitHub">
+                            <i class="bi bi-github text-sm"></i>
                         </a>
                     </nav>
                     <!-- Mobile Hamburger Button -->
@@ -111,6 +133,28 @@
                    class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
                     <i class="bi bi-patch-check text-slate-400 text-lg"></i> Certificações
                 </a>
+                <a href="https://stevillis.com.br"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-cyan-400 flex items-center gap-3">
+                    <i class="bi bi-briefcase text-lg"></i> Portfólio
+                </a>
+                <div class="pt-2 border-t border-slate-800 space-y-2">
+                    <div class="flex items-center gap-2 px-2 pt-2">
+                        <a href="https://www.linkedin.com/in/stevillis/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium text-center flex items-center justify-center gap-2">
+                            <i class="bi bi-linkedin text-cyan-400"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/stevillis"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="flex-1 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-sm font-medium text-center flex items-center justify-center gap-2">
+                            <i class="bi bi-github text-slate-300"></i> GitHub
+                        </a>
+                    </div>
+                </div>
             </div>
         </header>
         <!-- Main Body Area -->
@@ -118,22 +162,37 @@
             {% block content %}{% endblock %}
         </main>
         <!-- Footer -->
-        <footer class="mt-auto border-t border-slate-800/80 bg-slate-950 py-10 relative z-10">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-                <div class="flex items-center gap-3">
-                    <p class="text-sm text-slate-400">&copy; {% now 'Y' %} Stévillis Sousa</p>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="https://www.linkedin.com/in/stevillis/"
-                       target="_blank"
-                       class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-700 transition-all duration-200">
-                        <i class="bi bi-linkedin text-lg"></i>
-                    </a>
-                    <a href="https://github.com/stevillis"
-                       target="_blank"
-                       class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white hover:border-slate-700 transition-all duration-200">
-                        <i class="bi bi-github text-lg"></i>
-                    </a>
+        <footer class="mt-auto border-t border-slate-800/80 bg-slate-950 py-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <!-- Direct Connect Links -->
+                    <div class="flex flex-wrap items-center justify-center gap-2">
+                        <a href="https://stevillis.com.br"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-cyan-300 hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+                            <i class="bi bi-briefcase text-cyan-400 text-sm"></i>
+                            <span>Portfólio</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/stevillis/"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-cyan-300 hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+                            <i class="bi bi-linkedin text-cyan-400 text-sm"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/stevillis"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg text-xs font-medium text-slate-400 hover:text-white hover:bg-slate-900 border border-slate-800/80 hover:border-slate-700 transition-all">
+                            <i class="bi bi-github text-slate-300 text-sm"></i>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                    <!-- Copyright & Identity -->
+                    <div class="flex items-center gap-2 text-xs font-mono text-slate-400">
+                        <span>&copy; {% now 'Y' %} Stévillis Sousa</span>
+                    </div>
                 </div>
             </div>
         </footer>
